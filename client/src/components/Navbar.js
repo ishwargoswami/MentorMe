@@ -1,15 +1,35 @@
+import './Navbar.css'
+import searcheye from '.././assets/eyes.svg';
+import { useNavigate } from 'react-router-dom';
+
 function Navbar(){
-    <div className="navbar">
-        <div className="logo">
-            <h4>MentorMe</h4>
+    const navigate = useNavigate();
+
+    return(
+        <div className="navbar">
+            <div className="logo">
+                MentorMe
+            </div>
+            <div className="nav-list">
+                <buttton id="home">Home</buttton>
+                <buttton id="home">Booking</buttton>
+                <buttton id="home">About Us</buttton>
+                <buttton id="home">Contact Us</buttton>
+            </div>
+
+            <div className="search">
+                <img src={searcheye} alt="eye"></img>
+                <button id="btn-s">Search</button>
+                
+            </div>
+
+            <div className="login">
+                <button id="btn-l" onClick={()=>navigate("/SignUp")}>Login</button>
+                
+            </div>
         </div>
-        <div>
-            <button>Home</button>
-            <button>Booking</button>
-            <button>About Us</button>
-            <button>Contact Us</button>
-        </div>
-    </div>
+    )
+        
 }
 
-export default Navbar;
+export default Navbar;  

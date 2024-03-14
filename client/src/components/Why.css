@@ -1,0 +1,23 @@
+/* Why.css */
+
+.why-container {
+    background: #ffdfdf;
+    display: inline-flex;
+    padding: 82px 132px 57px 91px;
+    align-items: center;
+  }
+  
+  .why-main {
+    text-align: center;
+  }
+  
+  .why-main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .why-main p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
