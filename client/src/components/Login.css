@@ -1,0 +1,134 @@
+/* Login.css */
+
+.signup-container {
+    display: flex;
+    width: 1440px;
+    height: 790px;
+  }
+  
+  .left {
+    background: #041A26;
+    box-shadow: -4px 4px 26px 0px rgba(75, 100, 119, 0.69), 4px 4px 16px 0px rgba(255, 255, 255, 0.15), 4px 4px 26px 0px rgba(255, 255, 255, 0.37);
+    flex-shrink: 0;
+    width: 510px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  .left img {
+    width: 499.989px;
+    height: 503.05px;
+    flex-shrink: 0;
+  }
+  
+  .left h1{
+    cursor: pointer;
+  }
+  
+  .left p {
+    margin-top: 10px; /* Added margin for the new text */
+  }
+  
+  .right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px; /* Added padding */
+  }
+  
+  .welcome-text {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative; /* Position relative for absolute positioning */
+  }
+  
+  .underline {
+    position: absolute; /* Position absolute to make it independent of text */
+    bottom: -5px; /* Move it slightly below text */
+    left: 0; /* Start from the left */
+    width: 100px;
+    height: 3px;
+    background-color: #007bff;
+    transition: transform 0.3s ease;
+  }
+  
+  .underline.mentor {
+    transform: translateX(0);
+  }
+  
+  .underline.mentee {
+    transform: translateX(100%);
+  }
+  
+  .options p {
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+  }
+  
+  .options p + p {
+    margin-left: 20px; /* Add margin between options */
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  input[type='email'],
+  input[type='password'] {
+    width: 569.067px; /* Reverted back to original width */
+    height: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #041A26;
+    margin-top: 30px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #041A26;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px; /* Adjust margin from the password input */
+  }
+  
+  button:hover {
+    background-color: #ffffff;
+    border: 1px  solid #041a26;
+    color: #041a26
+  }
+  
+  .login-link {
+    margin-top: auto; /* Adjusted margin */
+    margin-bottom: 20px; /* Added margin */
+    text-align: center; /* Center alignment */
+  }
+  
+  .login-link p {
+    margin: 0;
+  }
+  
+  .login-link span {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .login-link span:hover {
+    text-decoration: underline;
+  }
+  
