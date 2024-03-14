@@ -1,11 +1,11 @@
 const express=require('express');
 const app=express();
 
-//connect databs with atlas 
+//connect databs with atlas  
 const DB = 'mongodb+srv://22dit012:hetvi@cluster0.0izy5px.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 mongoose.connect(DB , {
-    useNewUrlParser: true,
+    useNewUrlParser: true, //fjefj
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false
