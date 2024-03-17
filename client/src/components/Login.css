@@ -47,7 +47,7 @@
     text-align: center;
   }
   
-  .options {
+  .options1 {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -72,13 +72,13 @@
     transform: translateX(100%);
   }
   
-  .options p {
+  .options1 p {
     padding: 10px;
     margin: 0;
     cursor: pointer;
   }
   
-  .options p + p {
+  .options1 p + p {
     margin-left: 20px; /* Add margin between options */
   }
   

@@ -1,0 +1,156 @@
+.cd-container {
+    display: grid;
+    grid-template-columns: auto 1fr ; /* Two columns of equal width */
+    grid-template-rows: auto; /* Single row */
+    gap: 0px; /* Gap between columns */
+  }
+  
+  .cd-left {
+    height: 100%;
+    width: fit-content;
+    background-color: aqua;
+    overflow-y: hidden;
+  }
+  
+  .cd-right {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+.cd-right .cd-header{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height: 100px;
+    border-bottom: 1px solid #e3e8ed;
+
+    /* background: #59aed2; */
+}
+
+.cd-right .cd-opt{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    height: 350px;
+    padding: 40px;
+
+    /* background-color: #c635a2; */
+}
+
+.cd-right .cd-opt .cd-choose{
+    display: flex;
+    padding: 26px 0 20px;
+    border-bottom: 1px solid #e3e8ed;
+    width: 93%;
+}
+
+.cd-right .cd-ml{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    height: 170px;
+    padding: 30px;
+
+    /* background-color: rgb(214, 12, 12); */
+}
+
+.cd-right .cd-ml .cd-choose{
+    display: flex;
+    margin-top: 10px;
+    padding: 26px 0 20px;
+    border-bottom: 1px solid #e3e8ed;
+    width: max-content;
+}
+
+.cd-right .cd-ml .cd-choose .cd-icons{
+  margin-left: 10px;
+}
+
+.cd-icons{
+    margin-right: 20px;
+    font-size: large;
+}
+
+.cd-choose .cd-info{
+    margin-right: 50px;
+    width: 400px;
+}
+
+.cd-choose .cd-gm{
+    width: 400px;
+    margin-right: 50px;
+    font-size: large;
+}
+
+.cd-info-head{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cd-choose #btn-policy{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: medium;
+    justify-content: center;
+    background-color: #fff;
+    color: black;
+    border: 2px solid black;
+    margin-top: -5px;
+}
+
+.cd-choose #btn-policy:hover{
+    cursor: pointer;
+    background-color: #041A26;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.cd-choose #bp-select{
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: medium;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+.cd-choose #bp-select:hover,#np-num:hover, #np-select:hover{
+    cursor: pointer;
+}
+
+.cd-choose #np-select{
+    width: 100px;
+    height: 50px;
+    border-radius: 0 10px 10px 0;
+    text-align: center;
+    font-size: medium;
+    justify-content: center;
+    border-width: 2px 2px 2px 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+.cd-choose #np-num{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    font-size: large;
+    justify-content: center;
+    border-width: 2px 0 2px 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+
+
+
+  

@@ -1,0 +1,73 @@
+.sm-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
+  gap: 0px;
+}
+
+.sm-left {
+  height: 100%;
+  width: fit-content;
+  background-color: aqua;
+  overflow-y: hidden;
+}
+
+.sm-right {
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.sm-right .service-upper{
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+}
+
+.sm-right .service-upper .s-title{
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 100%;
+  text-align: left;
+}
+
+.sm-right .service-upper .s-list{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  width: 100%;
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.sm-right .service-upper .s-list #s-btns{
+  margin-right: 100px;
+  margin-left: 100px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 50px;
+  width: 140px;
+  height: 40px;
+  color: black;
+}
+
+.sm-right .service-upper .s-list #s-btns:hover{
+  cursor: pointer;
+  background-color: #041A26;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.sm-right .service-line{
+  width: 66%;
+  height: 1px;
+  background-color: #000;
+  margin-top: 60px;
+}
+
+

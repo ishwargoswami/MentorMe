@@ -1,0 +1,39 @@
+/* SearchCard.css */
+
+.card .search-card {
+    text-align: center;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 200px;
+    width: auto;
+    margin-top: 35px;
+
+  }
+  
+  .search-card-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .search-card-details {
+    margin-top: 10px;
+    color: #041A26;
+  }
+   .card .search-card:hover{
+    
+    background-color: #041A26;
+    box-shadow: #ffffff;
+    transform: scale(1.2);
+    transition-duration:1s;
+  }
+  .search-card:hover .search-card-details{
+    color: #ffff;
+  }
+
+  .search-card:hover .search-card-image{
+    transform: scale(1.1);
+  }

@@ -1,0 +1,8 @@
+/* Scroll.css */
+
+.scroll-container {
+    overflow-y: hidden;
+    height: 70vh;
+   
+  }
+  

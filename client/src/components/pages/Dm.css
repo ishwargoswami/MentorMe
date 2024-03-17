@@ -1,0 +1,71 @@
+.Dm-container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns of equal width */
+    grid-template-rows: auto; /* Single row */
+    gap: 0px; /* Gap between columns */
+  }
+  
+  .Dm-left {
+    height: 100%;
+    width: fit-content;
+    overflow-y: hidden;
+
+  }
+  
+  .Dm-right {
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    background-color: #fff;
+  }
+
+.Dm-right .dm-upper{
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  padding: 5px;
+  border-bottom: 1px solid #e3e8ed;
+}
+
+.Dm-right .dm-upper .dm-title{
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Dm-right .dm-upper .dm-list{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: larger;
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.Dm-right .dm-upper .dm-list #dm-btns{
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 50px;
+  width: 130px;
+  height: 40px;
+  color: black;
+}
+
+.Dm-right .dm-upper .dm-list #dm-btns:hover{
+  cursor: pointer;
+  background-color: #041A26;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+
+
+  

@@ -29,7 +29,7 @@ const Login = () => {
         <div className="welcome-text">
           <h1>Welcome</h1> {/* Moved text to top of right div */}
         </div>
-        <div className="options">
+        <div className="options1">
           <div className={`underline ${isMentor ? 'mentor' : 'mentee'}`}></div>
           <p className={isMentor ? 'active' : ''} onClick={() => setIsMentor(true)}>I'm Mentor</p>
           <p className={!isMentor ? 'active' : ''} onClick={() => setIsMentor(false)}>I'm Mentee</p>

@@ -1,6 +1,7 @@
 import './Navbar.css'
-import searcheye from '.././assets/eyes.svg';
+import searcheye from '.././assets/eyes-noto-color-emoji.gif';
 import { useNavigate } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 function Navbar(){
     const navigate = useNavigate();
@@ -11,20 +12,30 @@ function Navbar(){
                 MentorMe
             </div>
             <div className="nav-list">
-                <buttton id="home">Home</buttton>
-                <buttton id="home">Booking</buttton>
-                <buttton id="home">About Us</buttton>
-                <buttton id="home">Contact Us</buttton>
+                    <li id="home">
+                        <Link smooth to="#home">Home</Link>
+                    </li>
+                    <li id="home">
+                        <Link smooth to="/Dashboard">Dashboard</Link>
+                    </li>
+                    <li id="home">
+                        <Link smooth to="#about">About Us</Link>
+                    </li>
+                    <li id="home">
+                        <Link smooth to="#contact">Contact Us</Link>
+                    </li>
             </div>
 
             <div className="search">
                 <img src={searcheye} alt="eye"></img>
-                <button id="btn-s">Search</button>
-                
+                <div className="search-link">
+                    <Link smooth to="#search">Search</Link>
+                </div>
             </div>
 
+
             <div className="login">
-                <button id="btn-l" onClick={()=>navigate("/SignUp")}>Login</button>
+                <button id="btn-l" onClick={()=>navigate("/Login")}>Login</button>
                 
             </div>
         </div>
