@@ -1,5 +1,6 @@
 import React from 'react';
-import {  FaTwitter, FaInstagram } from 'react-icons/fa';
+import { BsInstagram } from "react-icons/bs";
+import { FaXTwitter } from "react-icons/fa6";
 import './Footer.css';
 import AOS from 'aos'
 import 'aos/dist/aos.css';
@@ -36,8 +37,8 @@ function Footer() {
         <div className="footer-column">
           <h3>Follow Us</h3>
           <div className="social-icons">
-            <FaTwitter id="x"/>
-            <FaInstagram  id="ig"/>
+            <FaXTwitter id="x" />
+            <BsInstagram id="ig"/> 
           </div>
         </div>
       </div>
