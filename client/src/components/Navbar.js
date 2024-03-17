@@ -9,7 +9,7 @@ function Navbar(){
     return(
         <div className="navbar">
             <div className="logo">
-                <img className='logo-img' src="mm.png" alt="logo-img"/>
+                <img className='logo-img' src="mm1.png" alt="logo-img"/>
                 <div className='logo-text'>MentorMe</div>
             </div>
             <div className="nav-list">

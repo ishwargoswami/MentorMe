@@ -14,7 +14,12 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+  .footer .footer-inner .logo-img{
+    width: 150px;
+    height: 150px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+  }
   .footer-column {
     flex: 1;
     padding: 0 20px;

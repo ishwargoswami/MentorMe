@@ -15,6 +15,7 @@ function Footer() {
   return (
     <footer className="footer"  data-aos="fade-up">
       <div className="footer-inner">
+      <img className='logo-img' src="mm1.png" alt="logo-img"/>
         <div className="footer-column">
           <h3>MentorMe</h3>
           <p>Guiding Dreams, Fostering Success.</p>

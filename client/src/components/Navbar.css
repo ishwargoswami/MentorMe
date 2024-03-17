@@ -29,17 +29,18 @@
     line-height: 28px;
     margin-left: 43px;
     display: flex;
+   
 }
 
 .navbar .logo .logo-img{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 60px;
     margin-right: 5px;
     margin-bottom: 10px;
 }
 
 .navbar .logo .logo-text{
-    margin-top: 5px;
+    margin-top: 12px;
 }
 
 .navbar .nav-list {
