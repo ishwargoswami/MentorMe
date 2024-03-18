@@ -8,7 +8,6 @@
   .cd-left {
     height: 100%;
     width: fit-content;
-    background-color: aqua;
     overflow-y: hidden;
   }
   

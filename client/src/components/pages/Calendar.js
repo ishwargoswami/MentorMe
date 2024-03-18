@@ -2,6 +2,7 @@ import React from 'react';
 import './Calendar.css';
 import Sidebar from '../Sidebar';
 import { useState } from 'react';
+import Policy from './Policy';
 
 import { LuCalendar } from "react-icons/lu";
 import { SiGooglemeet } from "react-icons/si";
@@ -27,6 +28,8 @@ const Calendar = () => {
           setgm(!gm);
     };
 
+    const[showPolicy, setShowPolicy] = useState(false)
+
   return (
     <div className="cd-container">
       <div className="cd-left">
@@ -47,7 +50,8 @@ const Calendar = () => {
                     <div>How can customers reschedule calls</div>
                 </div>
                 <div>
-                    <button id="btn-policy">Update Policy</button>
+                    <button id="btn-policy" onClick={() => setShowPolicy(true)}>Update Policy</button>
+                    {showPolicy && <Policy onClose={() => setShowPolicy(false)}/>}
                 </div>
             </div>
             <div className='cd-choose'>
