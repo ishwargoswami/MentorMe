@@ -26,12 +26,12 @@ const SignUp = () => {
         <p>Getting Started With Us!</p> {/* Added text below Mentor Me */}
         <img src={Vector} alt="MentorMe Logo" />
       </div>
+
       <div className="right">
-        <div className="welcome-text">
-          <h1>Welcome</h1> {/* Moved text to top of right div */}
-        </div>
-        <div className="options">
-          <div className={`underline ${isMentor ? "mentor" : "mentee"}`}></div>
+          <div className="welcome-text">
+            <h1>Welcome</h1> {/* Moved text to top of right div */}
+          </div>
+          <div className="options">
           <p
             className={isMentor ? "active" : ""}
             onClick={() => setIsMentor(true)}
@@ -71,6 +71,16 @@ const SignUp = () => {
               type="password"
               id="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              id="con-password"
+              placeholder="Confirm Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
