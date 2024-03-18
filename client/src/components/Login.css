@@ -109,7 +109,9 @@
   button:hover {
     background-color: #ffffff;
     border: 1px  solid #041a26;
-    color: #041a26
+    color: #041a26;
+    transform: scale(0.98);
+    transition: 0.5s;
   }
   
   .login-link {

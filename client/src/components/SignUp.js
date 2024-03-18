@@ -12,6 +12,7 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [conpassword, setConPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ const SignUp = () => {
             <h1>Welcome</h1> {/* Moved text to top of right div */}
           </div>
           <div className="options">
+          <div className={`underline ${isMentor ? "mentor" : "mentee"}`}></div>
           <p
             className={isMentor ? "active" : ""}
             onClick={() => setIsMentor(true)}
@@ -81,8 +83,8 @@ const SignUp = () => {
               type="password"
               id="con-password"
               placeholder="Confirm Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={conpassword}
+              onChange={(e) => setConPassword(e.target.value)}
               required
             />
           </div>

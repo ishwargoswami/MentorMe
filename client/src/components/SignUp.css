@@ -25,10 +25,12 @@
 
 .left h1{
   cursor: pointer;
+  font-size: 2.5rem;
 }
 
 .left p {
   margin-top: 10px; /* Added margin for the new text */
+  margin-bottom: 50px;
 }
 
 .right {
@@ -50,15 +52,13 @@
   align-items: center;
   margin-bottom: 20px;
   position: relative; /* Position relative for absolute positioning */
-  color: #fff;
-  background-color: #041A26;
 }
 
 .underline {
   position: absolute; /* Position absolute to make it independent of text */
   bottom: -5px; /* Move it slightly below text */
   left: 0; /* Start from the left */
-  width: 50px;
+  width:80px;
   height: 3px;
   background-color: #007bff;
   transition: transform 0.3s ease;
@@ -76,7 +76,6 @@
   padding: 10px;
   margin: 0;
   cursor: pointer;
-  border:2px solid #041A26;
 }
 
 .options p + p {
@@ -102,7 +101,6 @@ button {
   padding: 10px 20px;
   background-color: #041A26;
   color: #fff;
-  border: 1px solid #fff;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 40px; /* Adjust margin from the password input */
@@ -112,7 +110,6 @@ button {
 
 button:hover {
   background-color: #ffffff;
-  border: 1px solid #041a26;
   color: #041a26;
   transform: scale(0.98);
   transition: 0.5s;
@@ -127,6 +124,7 @@ button:hover {
 
 .login-link p {
   margin: 0;
+  margin-bottom: 50px;
 }
 
 .login-link a {
