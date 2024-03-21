@@ -104,12 +104,23 @@ margin-bottom: 80px;
       border: 2px solid rgb(209, 225, 250);
       padding-bottom: 50px;
     }
-    .bio-container h3{
+ 
+    
+    .bio-container .bio-icon {
+      display: inline-flex;
       margin-top: 150px;
-      font-size: 1rem;
-      margin-right: 90px;
-      
     }
+    .bio-container .bio-icon .bio-place {
+    font-size: 1.2rem;
+    margin-right: 80px;
+    margin-top: -30px;
+    }
+    .bio-container .bio-icon .bio-place #dcap,#loc{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      
     
     .bio-container p {
       color: grey;
@@ -117,6 +128,8 @@ margin-bottom: 80px;
       letter-spacing: 1px;
       margin-right: 40px;
       margin-left: -15px;
+      margin-top: 40px;
+      text-align: center;
     }
     
     .container-pf {
@@ -145,7 +158,7 @@ margin-bottom: 80px;
       width: 250px;
       line-height: 30px;
       margin-left: 280px;
-      margin-top: 20px;
+      margin-top: 10px;
     }
     .container-pf-text-center #line{
       width: 300px;
@@ -189,8 +202,4 @@ margin-bottom: 80px;
       border-radius: 100%;
     }
     
-    .bio-container {
-      margin-top: 10px;
-      margin-left: 30px;
-    }
      

@@ -19,7 +19,7 @@ function SearchCard({ person }) {
       <img className="search-card-image" alt={person.name} src={process.env.PUBLIC_URL + person.imgPath} />
       <div className="search-card-details">
         <h2>{person.name}</h2>
-        <p>{person.email}</p>
+        <p>{person.domain}</p>
       </div>
     </div>
     </div>

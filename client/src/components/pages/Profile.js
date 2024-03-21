@@ -2,10 +2,11 @@ import React from "react";
 import "./Profile.css";
 import Sidebar from "../Sidebar";
 import bg from "./background-img.jpg";
-import team from "./team-4.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import formdata from "../../formdetails";
+import { LuGraduationCap } from "react-icons/lu";
+import { IoLocationSharp } from "react-icons/io5";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -58,12 +59,22 @@ const Profile = () => {
             </div>
             <div className="container-pf-text-center">
               <h2>{formdata.name}</h2>
-              <p>{formdata.address}</p>
+              <p>[{formdata.domain}]</p>
               <hr id="line" />
             </div>
 
             <div className="bio-container">
-              <h3> Bio </h3>
+              <div className="bio-icon">
+              <div className="bio-place">
+              <LuGraduationCap id="dcap"/>
+              {formdata.passout}
+              </div>
+              <div className="bio-place">
+              <IoLocationSharp id ="loc"/>
+              {formdata.city}
+              </div>
+              </div>
+            
               <p>{formdata.bio}</p>
             </div>
           </div>

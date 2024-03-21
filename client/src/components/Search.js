@@ -21,7 +21,7 @@ function Search({ details }) {
     person => {
       return (
         person.name.toLowerCase().includes(searchField.toLowerCase()) ||
-        person.email.toLowerCase().includes(searchField.toLowerCase())
+        person.domain.toLowerCase().includes(searchField.toLowerCase())
 
      
       );

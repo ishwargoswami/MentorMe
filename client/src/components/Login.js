@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import "./Login.css"
 import Vector from  ".././assets/girl.png"
 import { useNavigate } from "react-router-dom";
-
-const Login = () => {
+ const Login = () => {
   const navigate = useNavigate();
   const [isMentor, setIsMentor] = useState(true); // State to track Mentor/Mentee option
 
@@ -55,11 +54,15 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" style={{ width: "559.067px", height: "50px" }}>Login</button> {/* Decreased button width */}
+          <div className="log-btn">
+          <button type="submit"style={{ width: "559.067px", height: "50px" }}>Login</button>
+  
+
+          </div>
         </form>
         <div className="login-link">
           <p>
-            Don't have an account? <span onClick={() => navigate("/signup")}>Sign Up</span>
+            Don't have an account? <span onClick={() => {navigate("/signup")}}>Sign Up</span>
           </p>
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BsInstagram } from "react-icons/bs";
-import { FaXTwitter } from "react-icons/fa6";
 import './Footer.css';
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 
 
 function Footer() {
@@ -28,15 +28,19 @@ function Footer() {
         <div className="footer-column">
           <h3>Menu</h3>
           <ul>
-            <li>Dashboard</li>
-            <li>About Us</li>
+            <li id="home">
+            <Link smooth to="#home">Home</Link>
+             </li> 
+            <li id="home">
+            <Link smooth to="#about">About Us</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Follow Us</h3>
           <div className="social-icons1">
-          <a href={"https://www.instagram.com/bhargav_dungrani_?igsh=cWhyaWNtbTY1YTV3"} target="_blank">
-            <BsInstagram id="ff"/> 
+          <a href={"https://www.instagram.com/_we.04_/?next=%2F"} target="_blank">
+            <BsInstagram id="ff"/>
             </a>
           </div>
         </div>

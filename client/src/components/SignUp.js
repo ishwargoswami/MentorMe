@@ -4,16 +4,13 @@ import React, { useState } from "react";
 import "./SignUp.css";
 import Vector from ".././assets/girl.png";
 import { useNavigate } from "react-router-dom";
-
 const SignUp = () => {
   const navigate = useNavigate();
   const [isMentor, setIsMentor] = useState(true); // State to track Mentor/Mentee option
-
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [conpassword, setConPassword] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission here, like sending data to backend
@@ -88,7 +85,9 @@ const SignUp = () => {
               required
             />
           </div>
-          <button type="submit">Create Account</button>
+          <div className="sign-btn">
+          <button type="submit"style={{ width: "559.067px", height: "50px" }}>Create Account</button>
+          </div>
         </form>
         <div className="login-link">
           <p>

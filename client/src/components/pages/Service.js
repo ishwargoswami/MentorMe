@@ -49,6 +49,15 @@ const Service = () => {
                 <form action="{Service}">
                   <div className="serviceform">
                     <div className="details">
+                    <select
+                          placeholder="domain"
+                          required
+                          id="domain"
+                          defaultValue=""> 
+                          <option value="call">1:1 call</option>
+                          <option value="webinar">Webinar</option>
+                          <option value="PriorityDM">Direct Message</option>
+                        </select>
                       <input
                         type="text"
                         required
@@ -56,15 +65,6 @@ const Service = () => {
                         id="title"
                         placeholder="Add Title"
                       />
-                       <select
-                          placeholder="domain"
-                          required
-                          id="domain"
-                          defaultValue=""> 
-                          <option value="call">1:1 call</option>
-                          <option value="webinar">Webinar</option>
-                          <option value="PriorityDM">DM</option>
-                        </select> 
                         <input
                         type="date"
                         required
@@ -74,10 +74,11 @@ const Service = () => {
                       />
                         <input
                         type="time"
-                        required
-                        name="time"
                         id="time"
+                        name="time"
+                        min="09:00" max="18:00"
                         placeholder="Time"
+                        required
                       />
                        <label htmlFor="" className="firstres"></label>
                       <input
@@ -91,7 +92,8 @@ const Service = () => {
                         type="number"
                         required
                         id="amount"
-                        placeholder="amount"
+                        placeholder="Amount (in ₹) 
+                        "
                       />
                       
                     </div>

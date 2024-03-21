@@ -60,7 +60,7 @@
   left: 0; /* Start from the left */
   width:80px;
   height: 3px;
-  background-color: #007bff;
+  background-color: #044489;
   transition: transform 0.3s ease;
 }
 
@@ -97,22 +97,12 @@ input[type='password'] {
   margin-top: 30px;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #041A26;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 40px; /* Adjust margin from the password input */
-  width: 559.067px; /* Same as input fields but 10px less */
-  height: 50px; /* Same as input fields */
-}
 
-button:hover {
-  background-color: #ffffff;
-  color: #041a26;
-  transform: scale(0.98);
-  transition: 0.5s;
+
+.sign-btn :hover {
+  background-color:#fff;
+  color:#041A26;
+  
 }
 
 .login-link {

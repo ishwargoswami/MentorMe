@@ -81,7 +81,9 @@ font-weight: 350;
     color:  white;
     margin-left: 20px;
     margin-top: 20px;
-  
+  }
+  .social-icons1 #ff:hover {
+  transform: scale(1.1);
   }
   
   .footer-bottom {
@@ -105,9 +107,16 @@ font-weight: 350;
     }
     
     .footer-column ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease; /* Add transition effect */
+   
+        color: #FFFfffff; /* Set text color */
+        text-decoration: none; /* Remove underline */
+        font-family: "Inter", sans-serif; /* Adjust font family */
+        font-size: 20px; /* Adjust font size */
+        font-weight: 400; /* Adjust font weight */
+        line-height: 8px; /* Adjust line height */
+        background-color: #041A26;
+        border:0;
+   
     }
     
   /* Add hover effect to list items */

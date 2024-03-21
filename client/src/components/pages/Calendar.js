@@ -75,8 +75,6 @@ const Calendar = () => {
                 <option value="2 Weeks">2 Weeks</option>
                 <option value="3 Weeks">3 Weeks</option>
                 <option value="4 Weeks">4 Weeks</option>
-                <option value="2 Months">2 Months</option>
-                <option value="3 Months">3 Months</option>
               </select>
             </div>
           </div>
@@ -148,8 +146,8 @@ const Calendar = () => {
 
               <div className="pol_container_two">
                     <form className="pol_toggle_two" onClick={handleClickTwo}>
-                      <input type="radio" id="choice3" name="choice2" value="30 Mins" defaultChecked={choice2 === '30 Mins'} />
-                      <label htmlFor="choice3">30 Mins</label>
+                      <input type="radio" id="choice3" name="choice2" value="2 Hours" defaultChecked={choice2 === '2 Hours'} />
+                      <label htmlFor="choice3">2 Hours</label>
 
                       <input type="radio" id="choice4" name="choice2" value="Any Time" defaultChecked={choice2 === 'Any Time'} />
                       <label htmlFor="choice4">Any Time</label>
