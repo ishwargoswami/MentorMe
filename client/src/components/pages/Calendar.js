@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "./Calendar.css";
 import Sidebar from "../Sidebar";
+=======
+import React from 'react';
+import './Calendar.css';
+import Sidebar from '../Sidebar';
+import { useState } from 'react';
+import Policy from './Policy';
+
+>>>>>>> 83cbaec12a1fea974c18b3e521615901e24dc3b7
 import { LuCalendar } from "react-icons/lu";
 import { SiGooglemeet } from "react-icons/si";
 import Switch from "react-switch";
@@ -51,6 +60,8 @@ const Calendar = () => {
     }
   };
 
+    const[showPolicy, setShowPolicy] = useState(false)
+
   return (
     <div className="cd-container">
       <div className="cd-left">
@@ -60,10 +71,24 @@ const Calendar = () => {
       <div className="cd-right">
         <div className="cd-header">Availability</div>
 
+<<<<<<< HEAD
         <div className="cd-opt">
           <div className="cd-choose">
             <div className="cd-icons">
               <LuCalendar />
+=======
+        <div className='cd-opt'>
+            <div className='cd-choose'>
+                <div className="cd-icons"><LuCalendar /></div>
+                <div className='cd-info'>
+                    <div className = 'cd-info-head'>Reschedule Policy</div>
+                    <div>How can customers reschedule calls</div>
+                </div>
+                <div>
+                    <button id="btn-policy" onClick={() => setShowPolicy(true)}>Update Policy</button>
+                    {showPolicy && <Policy onClose={() => setShowPolicy(false)}/>}
+                </div>
+>>>>>>> 83cbaec12a1fea974c18b3e521615901e24dc3b7
             </div>
             <div className="cd-info">
               <div className="cd-info-head">Booking Period</div>
