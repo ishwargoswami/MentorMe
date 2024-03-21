@@ -63,21 +63,25 @@ font-weight: 350;
     margin-top: 20px; /* Adjust spacing */
     font-size: 1.2rem;
   }
-  
-  .social-icons {
+  .social-icons1 {
     display: flex;
     justify-content: flex-end;
-    margin-right: 145px; /* Align icons to the right */
+    margin-right: 160px;
     font-size: x-large;
     letter-spacing: 5px;
-
   }
-  
-  .social-icons #x,#ig {
-    color: #fff;
-    margin-left: 30px; /* Adjust spacing between icons */
+  .social-icons1 a{
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color:#041A26;
+  }
+
+  .social-icons1 #ff {
+    color:  white;
+    margin-left: 20px;
     margin-top: 20px;
-    
+  
   }
   
   .footer-bottom {
@@ -111,4 +115,3 @@ font-weight: 350;
     color: #a2a2a2;
   }
  
-

@@ -1,3 +1,9 @@
+:root {
+  --accent: #041A26;
+  --border-width: 4px;
+  --border-radius: 55px;
+  --font-size: 20px;
+}
 .cd-container {
     display: grid;
     grid-template-columns: auto 1fr ; /* Two columns of equal width */
@@ -92,7 +98,10 @@
     font-weight: bold;
 }
 
-.cd-choose #btn-policy{
+.cd-right .cd-ml .cd-info-head{
+    margin-top: -80px;
+}
+.cd-right #btn-policy{
     width: 250px;
     height: 50px;
     border-radius: 10px;
@@ -103,9 +112,10 @@
     color: black;
     border: 2px solid black;
     margin-top: -5px;
+    margin-right: 900px;
 }
 
-.cd-choose #btn-policy:hover{
+.cd-right #btn-policy:hover{
     cursor: pointer;
     background-color: #041A26;
     color: #fff;
@@ -150,7 +160,177 @@
     border-color: black;
 }
 
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Apply background blur */
+    
+  }
 
+  .modal .modal-content .modal-title{
+    display: flex;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .modal .modal-content .modal-title h2{
+    font-size: 1.5rem;
+  }
+
+  .modal .modal-content .modal-title #modal-cl{
+    font-size: 1.8rem;
+    justify-self: flex-end;
+    opacity: 0.5;
+    margin-left: 300px;
+  }
+
+  .modal .modal-content .modal-title #modal-cl:hover{
+    cursor: pointer;
+    opacity: 1;
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+
+  .modal .modal-content p{
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .pol_container_one,.pol_container_two {
+    perspective: 800px;
+  }
+  
+  .pol_toggle_one,.pol_toggle_two {
+    position: relative;
+    border: solid var(--border-width) var(--accent);
+    border-radius: var(--border-radius);
+    transition: transform cubic-bezier(0, 0, 0.30, 2) .4s;
+    transform-style: preserve-3d;
+    perspective: 800px;
+  }
+  
+  .pol_toggle_one>input[type="radio"] {
+    display: none;
+  }
+
+  .pol_toggle_two>input[type="radio"] {
+    display: none;
+  }
+  
+  .pol_toggle_one>#choice1:checked~#pol_flap_one {
+    transform: rotateY(-180deg);
+  }
+  
+  .pol_toggle_one>#choice1:checked~#pol_flap_one>.pol_content_one {
+    transform: rotateY(-180deg);
+  }
+  
+  .pol_toggle_one>#choice2:checked~#pol_flap_one {
+    transform: rotateY(0deg);
+  }
+
+  .pol_toggle_two>#choice3:checked~#pol_flap_two {
+    transform: rotateY(-180deg);
+  }
+  
+  .pol_toggle_two>#choice3:checked~#pol_flap_two>.pol_content_two {
+    transform: rotateY(-180deg);
+  }
+  
+  .pol_toggle_two>#choice4:checked~#pol_flap_two {
+    transform: rotateY(0deg);
+  }
+  
+  .pol_toggle_one>label {
+    display: inline-block;
+    min-width: 170px;
+    padding: 30px;
+    font-size: var(--font-size);
+    text-align: center;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  
+  .pol_toggle_one>label,
+  .pol_toggle_one>#flap {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .pol_toggle_one>#pol_flap_one {
+    position: absolute;
+    top: calc( 0px - var(--border-width));
+    left: 50%;
+    height: calc(100% + var(--border-width) * 2);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size);
+    background-color: var(--accent);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform cubic-bezier(0.4, 0, 0.2, 1) .5s;
+  }
+  
+  .pol_toggle_one>#pol_flap_one>.pol_content_one {
+    color: #fff;
+    transition: transform 0s linear .25s;
+    transform-style: preserve-3d;
+  }
+  
+
+  .pol_toggle_two>label {
+    display: inline-block;
+    min-width: 170px;
+    padding: 30px;
+    font-size: var(--font-size);
+    text-align: center;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  
+  .pol_toggle_two>label,
+  .pol_toggle_one>#flap {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  .pol_toggle_two>#pol_flap_two {
+    position: absolute;
+    top: calc( 0px - var(--border-width));
+    left: 50%;
+    height: calc(100% + var(--border-width) * 2);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size);
+    background-color: var(--accent);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform cubic-bezier(0.4, 0, 0.2, 1) .5s;
+  }
+  
+  .pol_toggle_two>#pol_flap_two>.pol_content_two {
+    color: #fff;
+    transition: transform 0s linear .25s;
+    transform-style: preserve-3d;
+  }
 
 
   

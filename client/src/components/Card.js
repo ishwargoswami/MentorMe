@@ -14,7 +14,7 @@ function Card(props){
             <div className='card-name'>
                 <p>{review.name}</p>
             </div>
-
+        
             <div className='card-job'>
                 <p>{review.job}</p>
             </div>

@@ -10,25 +10,7 @@ const Booking = () => {
         <Sidebar/>
       </div>
       <div className="bk-right">
-      {/* Content for the right column */}
-        <div className="booking-upper">
-
-            <div className="b-title"><h2>Booking</h2></div>
-
-            <div className="b-list">
-                <button id='bk-btns'>1:1 Call</button>
-                <button id='bk-btns'>Priority DM</button>
-                <button id='bk-btns'>Webinars</button>
-            </div>
-
-        </div>
-
-        <div className="booking-line"></div>
-
-        <div className="booking-lower">
-
-        </div>
-
+     <h1>this is booking</h1>
       </div>
     </div>
   );

@@ -3,7 +3,8 @@ import './ContactForm.css'; // Import the CSS file
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 function ContactForm()  { 
   useEffect(()=>{
@@ -11,6 +12,9 @@ function ContactForm()  {
         offset:200,
         duration:1000});
 },[]);
+
+const navigate = useNavigate();
+
     return (
       <div className="background" id="contact">
         <div className="container">
@@ -33,12 +37,12 @@ function ContactForm()  {
                   <span>CONTACT</span>
                   <span>US</span>
                 </div>
-                <div className="app-contact">CONTACT INFO : +62 81 314 928 595</div>
+                <div className="app-contact">CONTACT INFO : +62 81 xxxxxx</div>
               </div>
               <div className="screen-body-item">
                 <div className="app-form" >
                   <div className="app-form-group"  data-aos='slide-up'>
-                    <input className="app-form-control" placeholder="NAME" value="Krisantus Wanandi" />
+                    <input className="app-form-control" placeholder="NAME"/>
                   </div>
                   <div className="app-form-group"  data-aos='slide-up'>
                     <input className="app-form-control" placeholder="EMAIL" />
@@ -50,7 +54,7 @@ function ContactForm()  {
                     <input className="app-form-control" placeholder="MESSAGE" />
                   </div>
                   <div className="app-form-group buttons"  data-aos='slide-up'>
-                    <button className="app-form-button">CANCEL</button>
+                    <button className="app-form-button"><Link smooth to="#home">CANCEL</Link></button>
                     <button className="app-form-button">SEND</button>
                   </div>
                 </div>

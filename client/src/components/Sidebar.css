@@ -10,7 +10,7 @@
   .logocontainer{
     margin-top: 50px;
   }
-  .logocontainer .logo-link a{
+  .logocontainer .logo-link h1{
     color: #FFFfffff; /* Set text color */
     text-decoration: none; /* Remove underline */
     font-family: "Inter", sans-serif; /* Adjust font family */
@@ -20,11 +20,7 @@
     background: #041A26;
     border:0;
   }
-  .logocontainer:hover{
-    transform: scale(1.1);
-    transition-duration: 0.2s;
-    
-  }
+  
   .sidebar.closed {
     width: 4.6rem; /* Adjust as needed */
   }

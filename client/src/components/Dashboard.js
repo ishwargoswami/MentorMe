@@ -1,6 +1,7 @@
 import React from 'react';
 import './Dashboard.css';
 import Sidebar from './Sidebar';
+import dshimg from'../assets/3.jpg';
 
 const Dashboard = () => {
   return (
@@ -11,7 +12,8 @@ const Dashboard = () => {
       </div>
       <div className="ds-right">
         {/* Content for the right column */}
-        <h1>This is dashboard</h1>
+        <h1>Welcome to Dashboard</h1>
+        <img src={dshimg} alt="dashboard" />
       </div>
     </div>
   );

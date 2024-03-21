@@ -14,6 +14,7 @@ import Service from  './components/pages/Service';
 import Booking from  './components/pages/Booking';
 import Calendar from  './components/pages/Calendar';
 import Dm from './components/pages/Dm';
+import Edit from './components/pages/Edit';
 function App() {
   return (
     <div className="App">
@@ -34,6 +35,7 @@ function App() {
           <Route path ="/Dashboard/Service" element={<Service/>}/>
           <Route path ="/Dashboard/Calendar" element={<Calendar/>}/>
           <Route path ="/Dashboard/DM" element={<Dm/>}/>
+          <Route path ="/Dashboard/Profile/Edit" element={<Edit/>}/>
 
       </Routes>
     </BrowserRouter>

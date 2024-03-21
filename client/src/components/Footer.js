@@ -22,7 +22,7 @@ function Footer() {
           <p>Guiding Dreams, Fostering Success.</p>
           <div className="contact-info">
             <p>Email: info@example.com</p>
-            <p>Phone: 123-456-7890</p>
+            <p>Phone: 123-xxxx-xxx</p>
           </div>
         </div>
         <div className="footer-column">
@@ -30,15 +30,14 @@ function Footer() {
           <ul>
             <li>Dashboard</li>
             <li>About Us</li>
-            <li>Contact </li>
-            <li>Login</li>
           </ul>
         </div>
         <div className="footer-column">
           <h3>Follow Us</h3>
-          <div className="social-icons">
-            <FaXTwitter id="x" />
-            <BsInstagram id="ig"/> 
+          <div className="social-icons1">
+          <a href={"https://www.instagram.com/bhargav_dungrani_?igsh=cWhyaWNtbTY1YTV3"} target="_blank">
+            <BsInstagram id="ff"/> 
+            </a>
           </div>
         </div>
       </div>

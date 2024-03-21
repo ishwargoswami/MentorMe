@@ -15,4 +15,17 @@
     height: 100%;
     overflow-y: auto;
   }
+
+  .ds-right h1{
+   font-size: 3.0rem;
+   margin-top: 50px;
+   color: #041A26;
+   font-weight: 1500;
+   font-family: 'Franklin Gothic Medium';
+   font-style:oblique;
+  }
+  .ds-right img {
+    margin-top: 100px;
+    /* height: 100vh; */
+  }
   

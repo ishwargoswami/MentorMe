@@ -32,7 +32,7 @@ function Why() {
 
           {/* Container on the right side */}
           <div className="ultimateImg" data-aos='zoom-in'>
-            <img className="mainImg" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/mp4.svg" alt="Main" />
+            <img className="mainImg" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Main" />
             <div className="purpleBox" data-aos='zoom-out'>
               <p className="purpleText" id="about">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget purus lectus viverra in semper nec pretium mus.

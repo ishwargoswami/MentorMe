@@ -10,13 +10,13 @@ import "./Sidebar.css";
 const Sidebar = () => {
   const menus = [
     { name: "Profile", link: "/Dashboard/Profile", icon: AiOutlineUser },
-    { name: "Priority DM", link: "/Dashboard/DM", icon: FiMessageSquare },
+    { name: "Logout", link: "/", icon: RiLogoutCircleLine },
     { name: "Service", link: "/Dashboard/Service", icon: TbServicemark, margin: true },
+    { name: "Priority DM", link: "/Dashboard/DM", icon: FiMessageSquare },
     { name: "Bookings", link: "/Dashboard/Booking", icon: FiBook},
     { name: "Calendar", link: "/Dashboard/Calendar", icon: FiCalendar },
-    { name: "Logout", link: "/", icon: RiLogoutCircleLine },
   ];
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <section className="flex gap-6">
@@ -25,7 +25,7 @@ const Sidebar = () => {
         {open && (
           <div className="logocontainer">
             <div className="logo-link">
-            <Link smooth to ='/'>MentorMe</Link>
+              <h1>MentorMe</h1>
             </div>
           </div>
         )}
