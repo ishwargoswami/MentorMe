@@ -1,26 +1,99 @@
+// /* Login.jsx */
+// import React, { useState, useEffect, useContext ,UserContext} from 'react';
+// import "./Login.css"
+// import Vector from ".././assets/girl.png"
+// import { useNavigate } from "react-router-dom";
+// import axios from "axios";
+// const Login = () => {
+//   const navigate = useNavigate();
+//   const [isMentor, setIsMentor] = useState(true); // State to track Mentor/Mentee option
+
+//   const [email, setEmail] = useState('')
+//   const [password, setPassword] = useState('')
+//   const [redirect, setRedirect] = useState('');
+//   // const [showPassword, setShowPassword] = useState(false);
+//   const {setUser} = useContext(UserContext);
+
+//   // const [rememberMe, setRememberMe] = useState(false);
+
+//   useEffect(() => {
+//     const storedEmail = localStorage.getItem('rememberedEmail');
+//     const storedPass = localStorage.getItem('rememberedpass')
+//     if (storedEmail) {
+//       setEmail(storedEmail);
+//       setPassword(storedPass);
+//     }
+//   }, []);
+
+
+
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     // Handle login submission here, like sending data to backend
+
+//     try {
+//       const { response } = await axios.post('http://localhost:5000/signin', { email, password })
+
+
+
+//       alert('Login success');
+
+//       setRedirect(true)
+//     } catch (e) {
+//       alert('Login failed');
+//     }
+//   }
+
+//   if (redirect) {
+//     return navigate('/');
+
+//   }
+//   console.log("Login submitted:", { email, password });
 /* Login.jsx */
+import React, { useState, useEffect, useContext } from 'react';
+import './Login.css';
+import Vector from '../assets/girl.png';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { UserContext } from '../UserContext';// Correct path to UserContext
 
-import React, { useState } from "react";
-import "./Login.css"
-import Vector from  ".././assets/girl.png"
-import { useNavigate } from "react-router-dom";
- const Login = () => {
+const Login = () => {
   const navigate = useNavigate();
-  const [isMentor, setIsMentor] = useState(true); // State to track Mentor/Mentee option
+  const [isMentor, setIsMentor] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [redirect, setRedirect] = useState('');
+  const { setUser } = useContext(UserContext);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  useEffect(() => {
+    const storedEmail = localStorage.getItem('rememberedEmail');
+    const storedPass = localStorage.getItem('rememberedpass');
+    if (storedEmail) {
+      setEmail(storedEmail);
+      setPassword(storedPass);
+    }
+  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle login submission here, like sending data to backend
-    console.log("Login submitted:", { email, password });
+    try {
+      const { data } = await axios.post('http://localhost:5000/signin', { email, password });
+      setUser(data);
+      alert('Login success');
+      setRedirect(true);
+    } catch (e) {
+      alert('Login failed');
+    }
   };
 
+  if (redirect) {
+    return navigate('/home');
+  }
   return (
     <div className="signup-container">
       <div className="left">
-        <h1 onClick={()=>navigate("/home")}>MentorMe</h1>
+        <h1 onClick={() => navigate("/home")}>MentorMe</h1>
         <p>Getting Started With Us!</p> {/* Added text below Mentor Me */}
         <img src={Vector} alt="MentorMe Logo" />
       </div>
@@ -55,14 +128,14 @@ import { useNavigate } from "react-router-dom";
             />
           </div>
           <div className="log-btn">
-          <button type="submit"style={{ width: "559.067px", height: "50px" }}>Login</button>
-  
+            <button type="submit" style={{ width: "559.067px", height: "50px" }}>Login</button>
+
 
           </div>
         </form>
         <div className="login-link">
           <p>
-            Don't have an account? <span onClick={() => {navigate("/signup")}}>Sign Up</span>
+            Don't have an account? <span onClick={() => { navigate("/signup") }}>Sign Up</span>
           </p>
         </div>
       </div>
