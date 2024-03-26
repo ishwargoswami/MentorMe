@@ -45,7 +45,7 @@
     width: 600px;
     height: 100vh;
     padding-right: 190px;
-    margin-top: -4000px;
+    z-index: 1;
     filter: none;
 }
 
@@ -64,25 +64,10 @@
   transform: rotate(-45deg);
 }
 
-.Edit-container .allitems .leftside .puppy {
+.Edit-container .allitems .leftside .avatar {
   bottom: -5px;
   position: absolute;
   text-align: center;
-}
-
-.Edit-container .allitems .leftside .puppy:before {
-  background: #807182;
-  height: 100%;
-  left: 0;
-  opacity: .4;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-}
-
-.Edit-container .allitems .leftside img {
-  filter: sepia(100%);
-  width: 70%;
 }
 
 

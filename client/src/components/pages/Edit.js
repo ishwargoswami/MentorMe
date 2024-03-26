@@ -1,7 +1,7 @@
 import React from "react";
 import "./Edit.css";
 import Sidebar from "../Sidebar";
-import forprofile from "./he.gif";
+import output from "./output1.png";
 import { useNavigate } from "react-router-dom";
 
 const Edit = () => {
@@ -16,10 +16,10 @@ const Edit = () => {
         <div className="allitems">
           <div className="leftside">
             <h1>EDIT PROFILE</h1>
-            <div className="puppy">
+            <div className="avatar">
               <img
-                src={forprofile}
-                alt="Puppy"
+                src={output}
+                alt="Avatar"
               />
             </div>
           </div>
