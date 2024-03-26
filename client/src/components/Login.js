@@ -57,6 +57,7 @@ import Vector from '../assets/girl.png';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserContext } from '../UserContext';// Correct path to UserContext
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -80,15 +81,16 @@ const Login = () => {
     try {
       const { data } = await axios.post('http://localhost:5000/signin', { email, password });
       setUser(data);
-      alert('Login success');
+      // alert('Login success');/
+      toast.success("login Succesfully")
       setRedirect(true);
     } catch (e) {
-      alert('Login failed');
+      toast.error("login failed")
     }
   };
 
   if (redirect) {
-    return navigate('/home');
+    return navigate('/Dashboard');
   }
   return (
     <div className="signup-container">

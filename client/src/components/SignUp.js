@@ -146,6 +146,7 @@ import "./SignUp.css";
 import Vector from ".././assets/girl.png";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -160,7 +161,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (password !== conPassword) {
-      alert('Passwords do not match');
+      toast.warning("Password not matched")
       return;
     }
 
@@ -173,12 +174,13 @@ const SignUp = () => {
       });
 
       if (response.data.message === "User registered successfully") {
-        alert('Registration Successful');
+        toast.success("Registered Successfully! Please Login Now!");
+        setTimeout(()=>{navigate("/login")},2000);
         setRedirect(true);
       }
     } catch (error) {
       console.log(error);
-      alert('Registration failed');
+      toast.warning("Registration Failed! Try Again Later.");
     }
   }
 
