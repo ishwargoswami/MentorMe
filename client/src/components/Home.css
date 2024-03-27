@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home{
+min-width: 100%;
+height: 100vh;
+}
+
+.home img {
+    height:100vh;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+.home .text{
+    position: absolute;
+    bottom: 400px;
+    color: white;
+}
+
+.home .text p{
+position: absolute;
+left:40px;
+bottom: 120px;
+color: var(--Light, #f0efef);
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 20px; /* 125% */
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+.home .text h1{
+    position:relative;
+left:30px;
+top: 275px;
+width: 35vw;
+color: var(--Light, #faf9f9);
+font-family: "Reem Kufi";
+font-size: 56px;
+font-style: normal;
+font-weight: 700;
+line-height: 64px; /* 114.286% */
+letter-spacing: -2px;
+text-align: left;
+}
+
+.home-parent .home button{
+    
+    background: #fac031;
+    position: relative;
+    margin-left: -1200px;
+    bottom: 150px;
+    width: 170px;
+    cursor: pointer;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-family: "Reem Kufi";
+
+}
+
+.home-parent .home button:hover{
+    color: #fac031;
+    background-color: white;
+}
+.home-parent .home button:hover .icon{
+    transform: translateX(7px);
+    transition: all smooth 1s;
+}

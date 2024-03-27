@@ -1,0 +1,13 @@
+/* SearchList.css */
+
+.search-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+    height: 150px;
+  }
+  
+
+

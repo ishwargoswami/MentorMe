@@ -1,0 +1,49 @@
+/* Search.css */
+
+.search-section {
+    background: #FAFAFA;
+    color: #ffffff;
+    padding: 20px;
+    height:600px;
+  }
+  
+  .search-header h2{
+    text-align: center;
+    font-size: 50px;
+    color: #000;
+font-family: Itim;
+
+font-style: normal;
+font-weight: 400;
+}
+.search-header h6{
+    color: #000;
+font-family: Jura;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 83.333% */
+margin-top: 10px;
+}
+  
+  
+
+.search-input {
+    margin-top: 30px;
+}
+  .search-input input{
+    text-align: left;
+    padding: 15px;
+    margin: 10px 15px;
+    width: 800px;
+height: 80px;
+flex-shrink: 0;
+border: 1px solid #041A26;
+border-radius: 66px;
+box-shadow:  3px 13px 30px 2px #041a26 ;
+  }
+  
+  .search-results {
+    margin-top: 20px;
+  }
+  

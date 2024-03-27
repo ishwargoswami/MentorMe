@@ -1,0 +1,29 @@
+.testimonials{
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.testimonials .card-btn{
+     display: flex;
+    font-size: x-large;
+    font-weight: bold;
+    width: fit-content;
+    margin-left: 270px;
+}
+
+.testimonials .card-btn button{
+    background-color: #FBF6EA;
+    color: #52f0f3;
+    width: 40px;
+    height: 40px;
+    border: none;
+    font-size: xx-large;
+    border-radius: 100%;
+    margin-left: 10px;
+}
+
+.testimonials .card-btn button:hover{
+    cursor: pointer;
+    color: #0A9396;
+}

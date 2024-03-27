@@ -1,0 +1,98 @@
+.sidebar {
+    position: sticky;
+    z-index: 1;
+    background: #041A26;
+    min-height: 100vh;
+    transition: 0.5s;
+    color: #ffffff;
+    padding: 0 1rem;
+  }
+  .logocontainer{
+    margin-top: 50px;
+  }
+  .logocontainer .logo-link h1{
+    color: #FFFfffff; /* Set text color */
+    text-decoration: none; /* Remove underline */
+    font-family: "Inter", sans-serif; /* Adjust font family */
+    font-size: 30px; /* Adjust font size */
+    font-weight: 400; /* Adjust font weight */
+    line-height: 8px; /* Adjust line height */
+    background: #041A26;
+    border:0;
+  }
+  
+  .sidebar.closed {
+    width: 4.6rem; /* Adjust as needed */
+  }
+  
+  .sidebar.open {
+    width: 18rem; /* Adjust as needed */
+  }
+  
+  .sidebar .menu-toggle {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.75rem;
+  }
+  
+  .sidebar .menu-toggle svg {
+    cursor: pointer;
+  }
+  
+  .sidebar .menu-items {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #041A26;
+    font-size: 0.875rem; /* Adjust as needed */
+    padding: 0.5rem;
+    border-radius: 0.400rem; /* Adjust as needed */
+    transition: background-color 0.3s;
+    background: #ffffff;
+  }
+  
+  .sidebar .menu-item:hover {
+    background-color:#041A26; /* Adjust hover color as needed */
+    transform: scale(1.1);
+    color:#ffffff;
+    border: 1px solid whitesmoke;
+  }
+  
+  .sidebar .menu-item.margin {
+    margin-top: 1.5rem; /* Adjust as needed */
+  }
+  
+  .sidebar .menu-item .icon {
+    margin-right: 0.875rem; /* Adjust as needed */
+  }
+  
+  .sidebar .menu-item .name {
+    white-space: nowrap;
+    overflow: hidden;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .sidebar.closed .menu-item .name {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  
+  .sidebar .menu-item .name.visible {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .main-content {
+    margin-left: 1rem; /* Adjust as needed */
+    font-size: 1.25rem; /* Adjust as needed */
+    color: #041A26; /* Adjust text color as needed */
+    font-weight: 600; /* Adjust font weight as needed */
+  }
+  

@@ -1,0 +1,137 @@
+.signup-container {
+  display: flex;
+  width: 1440px;
+  height: 790px;
+}
+
+.left {
+  background: #041A26;
+  box-shadow: -4px 4px 26px 0px rgba(75, 100, 119, 0.69), 4px 4px 16px 0px rgba(255, 255, 255, 0.15), 4px 4px 26px 0px rgba(255, 255, 255, 0.37);
+  flex-shrink: 0;
+  width: 510px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.left img {
+  width: 499.989px;
+  height: 503.05px;
+  flex-shrink: 0;
+}
+
+.left h1{
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.left p {
+  margin-top: 10px; /* Added margin for the new text */
+  margin-bottom: 50px;
+}
+
+.right {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px; /* Added padding */
+}
+
+.welcome-text {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative; /* Position relative for absolute positioning */
+}
+
+.underline {
+  position: absolute; /* Position absolute to make it independent of text */
+  bottom: -5px; /* Move it slightly below text */
+  left: 0; /* Start from the left */
+  width:80px;
+  height: 3px;
+  background-color: #044489;
+  transition: transform 0.3s ease;
+}
+
+.underline.mentor {
+  transform: translateX(0);
+}
+
+.underline.mentee {
+  transform: translateX(100%);
+}
+
+.options p {
+  padding: 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.options p + p {
+  margin-left: 20px; /* Add margin between options */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type='email'],
+input[type='text'],
+input[type='password'] {
+  width: 569.067px; /* Reverted back to original width */
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #041A26;
+  margin-top: 30px;
+}
+
+
+
+.sign-btn :hover {
+  background-color:#fff;
+  color:#041A26;
+  
+}
+
+.login-link {
+  margin-top: auto ; /* Adjusted margin */
+  /* margin-bottom: ; Added margin */
+  text-align: center; /* Center alignment */
+
+}
+
+.login-link p {
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.login-link a {
+  color: #041A26;
+  text-decoration: none;
+  
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+
+.active
+{
+  color: rgb(0, 0, 0);
+  background-color: white;
+  transition: 0.5s;
+  transform: scale(0.98);
+}

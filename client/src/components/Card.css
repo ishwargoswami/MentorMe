@@ -1,0 +1,82 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .card-img{
+    position: absolute;
+    top: -7rem;
+    margin: auto;
+    z-index: 10;
+}
+
+.card .card-img #pro{
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    width: 140px;
+    height: 140px;
+    z-index: 25;
+    margin-top:150px;
+    margin-left: -450px;
+    
+}
+
+.card .card-img .img-bg{
+    width: 140px;
+    height: 140px;
+    background-color: #52f0f3;
+    position: relative;
+    border-radius: 100%;
+    z-index: -20;
+    left: 10px;
+    margin-left: -295px;
+    margin-top: -150px;
+}
+
+.card .card-name{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.card .card-name p{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: x-large;
+    color: #041A26;
+}
+
+.card .card-job{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card .card-job p{
+    font-size: small;
+    text-transform: uppercase;
+    color: #0A9396;
+}
+
+.card #qleft{
+    color: #52f0f3;
+    margin: auto;
+    margin-top: 90px;
+    margin-bottom: -10px;
+}
+
+.card #qright{
+    color: #52f0f3;
+    margin: auto;
+    margin-top: 60px;
+}
+.card .card-text{
+    text-align: center;
+    margin-top: 70px;
+    color: rgb(100 116 139);
+    width: 600px;
+    height: fit-content;
+    font-size: .9rem;
+}
+
