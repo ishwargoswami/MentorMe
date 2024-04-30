@@ -16,6 +16,8 @@ function ContactForm()  {
 const navigate = useNavigate();
 
     return (
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="d83b4a79-7a02-4382-a5b2-d0eccc81afbe"></input>
       <div className="background" id="contact">
         <div className="container">
           <div className="screen"  data-aos="fade-up">
@@ -42,20 +44,20 @@ const navigate = useNavigate();
               <div className="screen-body-item">
                 <div className="app-form" >
                   <div className="app-form-group"  data-aos='slide-up'>
-                    <input className="app-form-control" placeholder="NAME"/>
+                    <input type="text" name="name" className="app-form-control" placeholder="NAME" required/>
                   </div>
                   <div className="app-form-group"  data-aos='slide-up'>
-                    <input className="app-form-control" placeholder="EMAIL" />
+                    <input type="text"  name="email" className="app-form-control" placeholder="EMAIL"required />
                   </div>
                   <div className="app-form-group"  data-aos='slide-up'>
-                    <input className="app-form-control" placeholder="CONTACT NO" />
+                    <input type="text"  name="number" className="app-form-control" placeholder="CONTACT NO" />
                   </div>
                   <div className="app-form-group message"  data-aos='slide-up'>
-                    <input className="app-form-control" placeholder="MESSAGE" />
+                    <input type="text" name="message" className="app-form-control" placeholder="MESSAGE"required />
                   </div>
                   <div className="app-form-group buttons"  data-aos='slide-up'>
                     <button className="app-form-button"><Link smooth to="#home">CANCEL</Link></button>
-                    <button className="app-form-button">SEND</button>
+                    <button  type="submit"className="app-form-button">SEND</button>
                   </div>
                 </div>
               </div>
@@ -63,6 +65,7 @@ const navigate = useNavigate();
           </div>
         </div>
       </div>
+      </form>
     );
   }
 
