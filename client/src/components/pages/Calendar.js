@@ -11,6 +11,7 @@ const Calendar = () => {
   const [np, setNp] = useState("Days");
   const [gm, setGm] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [meetLink, setMeetLink] = useState(""); // State to manage Google Meet link
 
   const handleChangeBP = (event) => {
     setBp(event.target.value);
@@ -117,6 +118,17 @@ const Calendar = () => {
                 offColor="#808080"
               />
             </div>
+            {/* Popup box and input field for Google Meet link */}
+            {gm && (
+              <div className="google-meet-popup">
+                <input
+                  type="text"
+                  placeholder="Enter Google Meet link"
+                  value={meetLink}
+                  onChange={(e) => setMeetLink(e.target.value)}
+                />
+              </div>
+            )}
           </div>
         </div>
 
@@ -125,36 +137,36 @@ const Calendar = () => {
           <div className="modal">
             <div className="modal-content">
               <div className="modal-title">
-              <h2>Reschedule Policy</h2>
-              <IoCloseSharp id="modal-cl" onClick={handleCloseModal} />
+                <h2>Reschedule Policy</h2>
+                <IoCloseSharp id="modal-cl" onClick={handleCloseModal} />
               </div>
               <p>How can your customers initiate a reschedule</p>
 
-                  <div className="pol_container_one">
-                    <form className="pol_toggle_one" onClick={handleClickOne}>
-                      <input type="radio" id="choice1" name="choice1" value="Directly Reschedule" defaultChecked={choice1 === 'Directly Reschedule'} />
-                      <label htmlFor="choice1">Directly Reschedule</label>
+              <div className="pol_container_one">
+                <form className="pol_toggle_one" onClick={handleClickOne}>
+                  <input type="radio" id="choice1" name="choice1" value="Directly Reschedule" defaultChecked={choice1 === 'Directly Reschedule'} />
+                  <label htmlFor="choice1">Directly Reschedule</label>
 
-                      <input type="radio" id="choice2" name="choice1" value="Request Reschedule" defaultChecked={choice1 === 'Request Reschedule'} />
-                      <label htmlFor="choice2">Request Reschedule</label>
+                  <input type="radio" id="choice2" name="choice1" value="Request Reschedule" defaultChecked={choice1 === 'Request Reschedule'} />
+                  <label htmlFor="choice2">Request Reschedule</label>
 
-                      <div id="pol_flap_one"><span className="pol_content_one">{choice1}</span></div>
-                    </form>
-                  </div>
+                  <div id="pol_flap_one"><span className="pol_content_one">{choice1}</span></div>
+                </form>
+              </div>
 
               <p>Minimum notice before rescheduling a call</p>
 
               <div className="pol_container_two">
-                    <form className="pol_toggle_two" onClick={handleClickTwo}>
-                      <input type="radio" id="choice3" name="choice2" value="2 Hours" defaultChecked={choice2 === '2 Hours'} />
-                      <label htmlFor="choice3">2 Hours</label>
+                <form className="pol_toggle_two" onClick={handleClickTwo}>
+                  <input type="radio" id="choice3" name="choice2" value="2 Hours" defaultChecked={choice2 === '2 Hours'} />
+                  <label htmlFor="choice3">2 Hours</label>
 
-                      <input type="radio" id="choice4" name="choice2" value="Any Time" defaultChecked={choice2 === 'Any Time'} />
-                      <label htmlFor="choice4">Any Time</label>
+                  <input type="radio" id="choice4" name="choice2" value="Any Time" defaultChecked={choice2 === 'Any Time'} />
+                  <label htmlFor="choice4">Any Time</label>
 
-                      <div id="pol_flap_two"><span className="pol_content_two">{choice2}</span></div>
-                    </form>
-                  </div>
+                  <div id="pol_flap_two"><span className="pol_content_two">{choice2}</span></div>
+                </form>
+              </div>
 
               <button onClick={handleCloseModal}>Save Settings</button>
             </div>
