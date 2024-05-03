@@ -1,88 +1,140 @@
-import React from "react";
+// Edit.js
+import React, { useState } from "react";
 import "./Edit.css";
 import Sidebar from "../Sidebar";
-import output from "./output1.png";
+import forprofile from "./output1.png";
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 const Edit = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    qualification: '',
+    passout_from: '',
+    country: '',
+    city: '',
+    domain: '',
+    address: '',
+    about_mentee: '',
+    link: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/edit', formData);
+      if (response.status === 201) {
+        alert('Profile updated successfully');
+        navigate('/Dashboard/Profile');
+      } else {
+        alert('Failed to update profile');
+      }
+    } catch (error) {
+      alert('Failed to update profile');
+    }
+  };
+
+
   return (
     <div className="Edit-container">
       <div className="Edit-left">
-        {/* Content for the left column */}
         <Sidebar />
       </div>
       <div className="Edit-right">
         <div className="allitems">
           <div className="leftside">
             <h1>EDIT PROFILE</h1>
-            <div className="avatar">
+            <div className="puppy">
               <img
-                src={output}
-                alt="Avatar"
+                src={forprofile}
+                alt="Puppy"
               />
             </div>
           </div>
           <div className="rightside">
             <div className="registerCard">
-              <div className="regCardHeading">
-              </div>
+              <div className="regCardHeading"></div>
               <div>
-                <form action="{Profile}">
+                <form onSubmit={handleSubmit}>
                   <div className="regFormfs">
                     <div className="regFormInput">
-                      <div className="regFormInput">
-                        <input type="file" id="photoUpload" accept="image/*" />
-                        <label
-                          htmlFor="photoUpload"
-                          className="uploadBtn"
-                        ></label>
-                      </div>
-                     
+                      <input
+                        type="file"
+                        id="photoUpload"
+                        accept="image/*"
+                      />
+                      <label
+                        htmlFor="photoUpload"
+                        className="uploadBtn"
+                      ></label>
                     </div>
                     <div className="regFormInput">
                       <label htmlFor=""></label>
                       <input
                         type="text"
                         required
-                        name="firstname"
+                        name="firstName"
                         id="firstname"
                         placeholder="First Name"
+                        onChange={handleChange}
                       />
-                       <label htmlFor="" className="firstres"></label>
+                      <label htmlFor="" className="firstres"></label>
                       <input
                         type="text"
                         required
-                        name="lastname"
+                        name="lastName"
                         id="lastname"
                         placeholder="Last Name"
+                        onChange={handleChange}
                       />
-                       <label htmlFor="" className="firstres"></label>
-                      <input
+                      <label htmlFor="" className="firstres"></label>
+                      {/* <input
                         type="text"
                         required
                         name="linkedin"
                         id="linkedin"
                         placeholder="Linkedin Profile"
+                        onChange={handleChange}
+                      /> */}
+                      <input
+                        type="text"
+                        required
+                        name="link"
+                        id="link"
+                        placeholder="Linkedin Link"
+                        onChange={handleChange}
                       />
-                       <input
+
+                      <input
                         type="email"
                         required
+                        name="email"
                         id="organizerEmail"
                         placeholder="example@email.com"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
                   <div className="regFormss">
                     <div className="regFormInput">
-                     
+
                     </div>
                     <div className="regFormInput">
                       <input
                         type="text"
                         required
-                        id="Qualificaiton"
+                        name="qualification"
+                        id="Qualification"
                         placeholder="Qualification"
+                        onChange={handleChange}
                       />
                     </div>
 
@@ -90,24 +142,28 @@ const Edit = () => {
                       <input
                         type="text"
                         required
-                        id="passout from"
+                        name="passout_from"
+                        id="passoutfrom"
                         placeholder="Passout From"
+                        onChange={handleChange}
                       />
-                       <label htmlFor="" className="firstres"></label>
+                      <label htmlFor="" className="firstres"></label>
                       <input
                         type="text"
                         required
                         name="country"
                         id="country"
                         placeholder="Country"
+                        onChange={handleChange}
                       />
-                       <label htmlFor="" className="firstres"></label>
+                      <label htmlFor="" className="firstres"></label>
                       <input
                         type="text"
                         required
                         name="city"
                         id="city"
                         placeholder="City"
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -115,12 +171,13 @@ const Edit = () => {
                     <div className="regFormtsfs"></div>
                     <div className="regFormtsss">
                       <div className="regFormInput">
-                        {/* <label htmlFor=""> Choose Domain</label> */}
                         <select
-                          placeholder="domain"
+                          type="text"
                           required
+                          name="domain"
                           id="domain"
-                          defaultValue=""
+                          placeholder="Domain"
+                          onChange={handleChange}
                         >
                           <option value="" disabled> Select Domain </option>
                           <option value="Web Development"> Web Development</option>
@@ -149,28 +206,28 @@ const Edit = () => {
                   </div>
                   <div className="regFormFs">
                     <div className="regFormInput">
-                      {/* <label htmlFor="">Address</label> */}
                       <textarea
                         placeholder=" Your  Address"
-                        name=""
+                        name="address"
                         id="venue"
                         cols="30"
                         rows="5"
+                        onChange={handleChange}
                       ></textarea>
                     </div>
                     <div className="regFormInput">
-                      {/* <label htmlFor="">BIO</label> */}
                       <textarea
-                        name=""
+                        name="about_mentee"
                         id="description"
                         placeholder="Enter Something about your self..."
                         cols="30"
                         rows="5"
+                        onChange={handleChange}
                       ></textarea>
                     </div>
                   </div>
                   <div className="regFormSubmit">
-                    <button type="submit" className="regFormBtn" onClick={() => navigate("/Dashboard/Profile")}>
+                    <button type="submit" className="regFormBtn">
                       Save data
                     </button>
                   </div>
@@ -184,4 +241,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default Edit;

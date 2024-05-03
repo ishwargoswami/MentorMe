@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../userschema');
+const Userprofile=require('../userprofile')
 require('../conn');
 //this will work first beacuse of its first called 
 router.get('/Home', (req, res) => {
@@ -123,6 +124,23 @@ router.post('/register', async (req, res) => {
     }
 });
 
+router.post('/edit', async (req, res) => {
+    const { firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link } = req.body;
+    console.log(req.body);
+    try {
+        const userprofile = new Userprofile({ firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link });
+        const userRegister = await userprofile.save();
+
+        if (userRegister) {
+            return res.status(201).json({ message: "User profile updated" });
+        } else {
+            return res.status(500).json({ error: "Edit failed" });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Server error" });
+    }
+});
 // to postman videoc 11.36 video 8
 module.exports = router;
 
