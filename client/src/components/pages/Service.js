@@ -105,7 +105,7 @@ const Service = () => {
           <table>
             <thead>
               <tr>
-                <th>Domain</th>
+                <th>Service</th>
                 <th>Title</th>
                 <th>Date</th>
                 <th>Time</th>
@@ -150,7 +150,7 @@ const Service = () => {
                             onChange={handleChange}
                             required
                           >
-                            <option value="">Select Domain</option>
+                            <option value="">Select Service</option>
                             <option value="call">1:1 call</option>
                             <option value="webinar">Webinar</option>
                             <option value="PriorityDM">Direct Message</option>
