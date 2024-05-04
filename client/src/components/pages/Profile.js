@@ -49,7 +49,7 @@ const Profile = () => {
           </div>
           <div className="img-cover"></div>
           <div className="profile-text">
-            <h1>Hello <span>{userprofile.firstname}</span> </h1>
+            <h1>Hello <span>{userprofile[0].firstname}</span> </h1>
             <p>
               This is your profile page. You can see the progress you've made
               with your work and manage your projects or assigned tasks !!!
@@ -66,15 +66,15 @@ const Profile = () => {
         <div className="page-shadow">
           <div className="main-container shadow">
             <div className="container-pf">
-              <img src={userprofile.image} alt="John" className="profile-image" />
+              <img src={userprofile[0].image} alt="John" className="profile-image" />
               <div className="social-icons">
-              <a href={userprofile.link} target="_blank">
+              <a href={userprofile[0].link} target="_blank">
                 <FaLinkedin id="x" />
                 </a>
               </div>
             </div>
             <div className="container-pf-text-center">
-              <h2>{userprofile.firstname} {userprofile.lastName}</h2> 
+              <h2>{userprofile[0].firstname} {userprofile[0].lastName}</h2> 
               <hr id="line" />
             </div>
 
@@ -82,15 +82,15 @@ const Profile = () => {
               <div className="bio-icon">
               <div className="bio-place">
               <LuGraduationCap id="dcap"/>
-              {userprofile.passout_from}
+              {userprofile[0].passout_from}
               </div>
               <div className="bio-place">
               <IoLocationSharp id ="loc"/>
-              {userprofile.city}
+              {userprofile[0].city}
               </div>
               </div>
             
-              <p>{userprofile.about_mentee}</p>
+              <p>{userprofile[0].about_mentee}</p>
             </div>
           </div>
         </div>
