@@ -68,6 +68,11 @@
   
 }
 
+.serv-modal .serv-modal-content{
+  display: flex;
+  flex-direction: column;
+}
+
 .serv-modal .serv-modal-content .serv-modal-title{
   display: flex;
   font-size: larger;
@@ -104,16 +109,29 @@
   background-color: white;
   height: fit-content;
   display: flex;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: 35px;
   
 }
-.serviceform .details select {
+
+.content .first .form-group1 .details{
   display: flex;
- margin-left: 50px;
- 
-  width: 400px;
-  height: 44px;
+  flex-direction: column;
+  width: 300px;
+  gap: 20px;
+  border-radius: 50px;
+  height: 550px;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .first .form-group1 .details select {
+  display: flex;
+ margin-left: 5px;
+ margin-top: -30px;
+  width: 330px;
+  height: 55px;
   padding: 10px;
   font-size: 17px;
   align-items: center;
@@ -122,10 +140,10 @@
   background: var(--White, #fff);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
 }
-.serviceform .details input{
+.content .first .form-group1 .details input{
   display: flex;
-  width: 400px;
-  height: 44px;
+  width: 330px;
+  height: 55px;
   padding: 10px;
   font-size: 17px;
   align-items: center;
@@ -133,7 +151,7 @@
   border: 1px solid var(--stork-style, #c9c9c9);
   background: var(--White, #fff);
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-  margin-left: 50px;
+  margin-left: 5px;
 }
 .first{
   margin-top: 30px;

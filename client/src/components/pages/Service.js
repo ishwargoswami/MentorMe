@@ -48,7 +48,7 @@ const Service = () => {
       const response = await axios.post('http://localhost:5000/create-service', formData);
       if (response.status === 201) {
         alert('Service added successfully');
-        setFormData({ // Clear form data after successful submission
+        setFormData({
           domain: '',
           title: '',
           date: '',
@@ -57,13 +57,28 @@ const Service = () => {
           amount: ''
         });
         handleCloseServiceModal();
-        fetchData(); // Refresh data after adding a new service
+        fetchData();
       } else {
         alert('Failed to add service');
       }
     } catch (error) {
       console.error(error);
       alert('Failed to add service');
+    }
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(`http://localhost:5000/services/${id}`);
+      if (response.status === 200) {
+        alert('Service deleted successfully');
+        fetchData(); // Refresh data after deleting a service
+      } else {
+        alert('Failed to delete service');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Failed to delete service');
     }
   };
 
@@ -79,7 +94,43 @@ const Service = () => {
             Service
           </div>
 
-          {addService && (
+          <div>
+            <button id="btn-serv" onClick={handleOpenServiceModal}>
+              Create New Service
+            </button>
+          </div>
+        </div>
+
+        <div className="sm-lower">
+          <table>
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Duration</th>
+                <th>Amount</th>
+                <th>Action</th> 
+              </tr>
+            </thead>
+            <tbody>
+              {serviceData.map((service, index) => (
+                <tr key={index}>
+                  <td>{service.domain}</td>
+                  <td>{service.title}</td>
+                  <td>{service.date}</td>
+                  <td>{service.time}</td>
+                  <td>{service.duration}</td>
+                  <td>{service.amount}</td>
+                  <td><button onClick={() => handleDelete(service._id)}>Delete</button></td> 
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        {addService && (
             <div className="serv-modal">
               <div className="serv-modal-content">
                 <div className="serv-modal-title">
@@ -156,39 +207,6 @@ const Service = () => {
             </div>
           )}
 
-          <div>
-            <button id="btn-serv" onClick={handleOpenServiceModal}>
-              Create New Service
-            </button>
-          </div>
-        </div>
-
-        <div className="sm-lower">
-          <table>
-            <thead>
-              <tr>
-                <th>Domain</th>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Duration</th>
-                <th>Amount</th>
-              </tr>
-            </thead>
-            <tbody>
-              {serviceData.map((service, index) => (
-                <tr key={index}>
-                  <td>{service.domain}</td>
-                  <td>{service.title}</td>
-                  <td>{service.date}</td>
-                  <td>{service.time}</td>
-                  <td>{service.duration}</td>
-                  <td>{service.amount}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
       </div>
     </div>
   );
