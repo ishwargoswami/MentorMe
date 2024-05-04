@@ -32,8 +32,8 @@ const Edit = () => {
     try {
       const response = await axios.post('http://localhost:5000/edit', formData);
       if (response.status === 201) {
-        alert('Profile updated successfully');
         navigate('/Dashboard/Profile');
+        alert('Profile updated successfully');
       } else {
         alert('Failed to update profile');
       }
@@ -132,8 +132,8 @@ const Edit = () => {
                         type="text"
                         required
                         name="qualification"
-                        id="Qualification"
-                        placeholder="Qualification"
+                        id="qualification"
+                        placeholder="qualification"
                         onChange={handleChange}
                       />
                     </div>
@@ -143,7 +143,7 @@ const Edit = () => {
                         type="text"
                         required
                         name="passout_from"
-                        id="passoutfrom"
+                        id="passout_from"
                         placeholder="Passout From"
                         onChange={handleChange}
                       />
@@ -209,7 +209,7 @@ const Edit = () => {
                       <textarea
                         placeholder=" Your  Address"
                         name="address"
-                        id="venue"
+                        id="address"
                         cols="30"
                         rows="5"
                         onChange={handleChange}
@@ -218,7 +218,7 @@ const Edit = () => {
                     <div className="regFormInput">
                       <textarea
                         name="about_mentee"
-                        id="description"
+                        id="about_mentee"
                         placeholder="Enter Something about your self..."
                         cols="30"
                         rows="5"

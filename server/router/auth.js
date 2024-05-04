@@ -1,3 +1,4 @@
+//auth.js
 const express = require('express');
 const router = express.Router();
 const User = require('../userschema');
@@ -142,6 +143,24 @@ router.post('/edit', async (req, res) => {
     }
 });
 // to postman videoc 11.36 video 8
+
+router.get('/profile', async (req, res) => {
+    try {
+        // Query MongoDB to fetch user profiles
+        const userProfile = await Userprofile.find(); // You can add query conditions if needed
+        
+        // Check if any user profiles were found
+        if (userProfile.length === 0) {
+            return res.status(404).json({ error: "No user profiles found" });
+        }
+        
+        // Send the user profiles as the response
+        res.status(200).json(userProfile);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Server error" });
+    }
+});
 module.exports = router;
 
 

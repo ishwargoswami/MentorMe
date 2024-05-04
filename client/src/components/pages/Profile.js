@@ -1,22 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import "./Profile.css";
 import Sidebar from "../Sidebar";
 import bg from "./background-img.jpg";
 import { FaLinkedin } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import formdata from "../../formdetails";
+import { useNavigate,useLocation } from "react-router-dom"; // Import useNavigate
 import { LuGraduationCap } from "react-icons/lu";
 import { IoLocationSharp } from "react-icons/io5";
+import Edit from "./Edit";
 
 const Profile = () => {
-  const navigate = useNavigate();
-  let form = {formdata}; // Accessing the first item in the array if it exists
-  // if (!form) {
-  //   // If formdata is empty or undefined, return null or handle the error accordingly
-  //   return null; // or render an error message
-  // }
+  const navigate = useNavigate(); // Initialize navigate
+  const location = useLocation();  
+  const [userprofile, setUserprofile] = useState()
 
-  console.log(formdata.name);
+  const updatedProfileData = location.state;
+  console.log(updatedProfileData);
+
+  useEffect(() => {
+    const fetchUserprofile = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/profile'); // Assuming you have a /profile endpoint to fetch profile data
+        setUserprofile(response.data);
+      } catch (error) {
+        console.error("Failed to fetch profile data:", error);
+      }
+    };
+
+    fetchUserprofile();
+  }, []);
+
+  if (!userprofile) {
+    return <div><Edit/></div>;
+  }
 
   return (
     <div className="profile-container">
@@ -33,14 +49,14 @@ const Profile = () => {
           </div>
           <div className="img-cover"></div>
           <div className="profile-text">
-            <h1>Hello <span>{formdata.username}</span> </h1>
+            <h1>Hello <span>{userprofile.firstname}</span> </h1>
             <p>
               This is your profile page. You can see the progress you've made
               with your work and manage your projects or assigned tasks !!!
             </p>
             <button
               id="edit-profile"
-              onClick={() => navigate("/Dashboard/Profile/Edit")}
+              onClick={() => navigate("/Dashboard/Profile/Edit")} // Use navigate here
             >
               Edit Profile
             </button>
@@ -50,16 +66,15 @@ const Profile = () => {
         <div className="page-shadow">
           <div className="main-container shadow">
             <div className="container-pf">
-              <img src={formdata.image} alt="John" className="profile-image" />
+              <img src={userprofile.image} alt="John" className="profile-image" />
               <div className="social-icons">
-              <a href={formdata.linkedin} target="_blank">
+              <a href={userprofile.link} target="_blank">
                 <FaLinkedin id="x" />
                 </a>
               </div>
             </div>
             <div className="container-pf-text-center">
-              <h2>{formdata.name}</h2>
-              <p>[{formdata.domain}]</p>
+              <h2>{userprofile.firstname} {userprofile.lastName}</h2> 
               <hr id="line" />
             </div>
 
@@ -67,15 +82,15 @@ const Profile = () => {
               <div className="bio-icon">
               <div className="bio-place">
               <LuGraduationCap id="dcap"/>
-              {formdata.passout}
+              {userprofile.passout_from}
               </div>
               <div className="bio-place">
               <IoLocationSharp id ="loc"/>
-              {formdata.city}
+              {userprofile.city}
               </div>
               </div>
             
-              <p>{formdata.bio}</p>
+              <p>{userprofile.about_mentee}</p>
             </div>
           </div>
         </div>

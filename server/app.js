@@ -1,8 +1,10 @@
+//app.js
 const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+const Userprofile = require('./userprofile');
 
 //const DB = "mongodb+srv://22dit013:bharg@cluster0.klo8sdv.mongodb.net/mentor?retryWrites=true&w=majority&appName=Cluster0";
 dotenv.config({ path: './config.env' });
@@ -32,6 +34,14 @@ const PORT = process.env.PORT || 5000;
 app.get('/Home', (req, res) => {
     res.send("hello world server");
 });
+
+app.get('/profile',(req,res)=>{
+  Userprofile.find()
+  .then(userprofile =>res.json(userprofile))
+  .catch(err => res.json(err))
+})
+
+
 
 app.listen(5000, () => {
     console.log(`running at port number ${PORT}`);
