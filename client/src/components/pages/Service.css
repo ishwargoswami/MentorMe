@@ -160,3 +160,18 @@
       color: #fff;
       transform:scale(1.1) ;
 }
+
+.sm-lower table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sm-lower th, .sm-lower td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.sm-lower th {
+  background-color: #f2f2f2;
+}

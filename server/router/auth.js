@@ -2,7 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../userschema');
-const Userprofile=require('../userprofile')
+const Userprofile=require('../userprofile');
+const Service = require('../userService');
 require('../conn');
 //this will work first beacuse of its first called 
 router.get('/Home', (req, res) => {
@@ -161,6 +162,35 @@ router.get('/profile', async (req, res) => {
         res.status(500).json({ error: "Server error" });
     }
 });
+
+router.post('/create-service', async (req, res) => {
+    const { domain, title, date, time, duration, amount } = req.body;
+
+    try {
+        const service = new Service({ domain, title, date, time, duration, amount });
+        const serviceCreated = await service.save();
+
+        if (serviceCreated) {
+            return res.status(201).json({ message: "Service created successfully" });
+        } else {
+            return res.status(500).json({ error: "Failed to create service" });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: "Server error" });
+    }
+});
+
+router.get('/services', async (req, res) => {
+    try {
+        const services = await Service.find();
+        res.status(200).json(services);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Server error" });
+    }
+});
+
 module.exports = router;
 
 
