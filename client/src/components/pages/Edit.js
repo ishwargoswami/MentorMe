@@ -25,6 +25,7 @@ const Edit = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log(formData.profileImage)
   };
 
   const handleSubmit = async (e) => {
@@ -69,6 +70,7 @@ const Edit = () => {
                       <input
                         type="file"
                         id="photoUpload"
+                        name="profileImage"
                         accept="image/png,image/gif,image/jpg,image/jpeg"
                         onChange={handleChange}
                       />

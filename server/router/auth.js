@@ -4,6 +4,8 @@ const router = express.Router();
 const User = require('../userschema');
 const Userprofile=require('../userprofile');
 const Service = require('../userService');
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
 require('../conn');
 //this will work first beacuse of its first called 
 router.get('/Home', (req, res) => {
