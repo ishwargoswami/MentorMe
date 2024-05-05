@@ -45,6 +45,11 @@ const userPROFILESchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    profileImage: 
+    {
+        data:Buffer,
+        type: String,
+    },
 });
 
 const Userprofile = mongoose.model('USERPROFILE', userPROFILESchema);

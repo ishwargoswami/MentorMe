@@ -20,6 +20,7 @@ const Edit = () => {
     address: '',
     about_mentee: '',
     link: '',
+    profileImage:'',
   });
 
   const handleChange = (e) => {
@@ -69,7 +70,8 @@ const Edit = () => {
                       <input
                         type="file"
                         id="photoUpload"
-                        accept="image/*"
+                        accept="image/png,image/gif,image/jpg,image/jpeg"
+                        onChange={handleChange}
                       />
                       <label
                         htmlFor="photoUpload"
