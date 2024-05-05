@@ -4,6 +4,8 @@ const router = express.Router();
 const User = require('../userschema');
 const Userprofile=require('../userprofile');
 const Service = require('../userService');
+const multer  = require('multer');
+const upload = multer({ dest: 'uploads/' });
 require('../conn');
 //this will work first beacuse of its first called 
 router.get('/Home', (req, res) => {
@@ -135,13 +137,12 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage: storage });
+
 
 router.post('/edit', upload.single('profileImage'), async (req, res) => {
     try {
-        const { firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link } = req.body;
-        const profileImage = req.file.path; // File path of the uploaded image
-
+        const {profileImage, firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link } = req.body;
+        // const profileImage = req.file.path; // File path of the uploaded image
         // Create new user profile with image path
         const userprofile = new Userprofile({ firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link, profileImage });
         await userprofile.save();

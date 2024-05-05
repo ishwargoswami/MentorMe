@@ -65,8 +65,10 @@ const Profile = () => {
 
         <div className="page-shadow">
           <div className="main-container shadow">
-            <div className="container-pf">
-              <img src={userprofile[0].profileImage} alt="John" className="profile-image" />
+            <div className="container-pf">{
+              console.log(userprofile[0].profileImage)
+            }
+              <img src={userprofile[0].profileImage} alt="DOe" className="profile-image" />
               <div className="social-icons">
               <a href={userprofile[0].link} target="_blank">
                 <FaLinkedin id="x" />
