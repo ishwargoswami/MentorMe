@@ -20,7 +20,6 @@ const Edit = () => {
     address: '',
     about_mentee: '',
     link: '',
-    profileImage:'',
   });
 
   const handleChange = (e) => {

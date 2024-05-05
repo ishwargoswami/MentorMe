@@ -126,27 +126,18 @@ router.post('/register', async (req, res) => {
     }
 });
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads'); // Directory where images will be stored
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname)); // Unique filename for each image
-    }
-});
-
-const upload = multer({ storage: storage });
-
-router.post('/edit', upload.single('profileImage'), async (req, res) => {
+router.post('/edit', async (req, res) => {
+    const { firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link } = req.body;
+    console.log(req.body);
     try {
-        const { firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link } = req.body;
-        const profileImage = req.file.path; // File path of the uploaded image
+        const userprofile = new Userprofile({ firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link });
+        const userRegister = await userprofile.save();
 
-        // Create new user profile with image path
-        const userprofile = new Userprofile({ firstName, lastName, email, qualification, passout_from, country, city, domain, address, about_mentee, link, profileImage });
-        await userprofile.save();
-
-        res.status(201).json({ message: "User profile updated" });
+        if (userRegister) {
+            return res.status(201).json({ message: "User profile updated" });
+        } else {
+            return res.status(500).json({ error: "Edit failed" });
+        }
     } catch (error) {
         console.error(error);
         return res.status(500).json({ error: "Server error" });
@@ -216,6 +207,7 @@ router.delete('/services/:id', async (req, res) => {
   });
 
 module.exports = router;
+
 
 
 
