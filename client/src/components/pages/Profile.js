@@ -20,7 +20,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserprofile = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/profile'); // Assuming you have a /profile endpoint to fetch profile data
+        const response = await axios.get('https://mentorme-hooz.onrender.com/profile'); // Assuming you have a /profile endpoint to fetch profile data
         setUserprofile(response.data);
       } catch (error) {
         console.error("Failed to fetch profile data:", error);
