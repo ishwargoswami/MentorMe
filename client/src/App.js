@@ -15,6 +15,8 @@ import Booking from  './components/pages/Booking';
 import Calendar from  './components/pages/Calendar';
 import Dm from './components/pages/Dm';
 import Edit from './components/pages/Edit';
+import Videocall from './components/pages/Videocall';
+import Vc from './components/pages/Vc';
 function App() {
   return (
     <div className="App">
@@ -36,7 +38,8 @@ function App() {
           <Route path ="/Dashboard/Calendar" element={<Calendar/>}/>
           <Route path ="/Dashboard/DM" element={<Dm/>}/>
           <Route path ="/Dashboard/Profile/Edit" element={<Edit/>}/>
-
+          <Route path ="/Dashboard/videocall" element={<Videocall/>}/>
+          <Route path ="/Dashboard/Vc" element={<Vc/>}/>
       </Routes>
     </BrowserRouter>
     </div>

@@ -3,22 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { TbServicemark } from "react-icons/tb";
-import { FiMessageSquare, FiCalendar, FiBook } from "react-icons/fi";
-import { AiOutlineUser } from "react-icons/ai";
+import { FiMessageSquare, FiCalendar, FiBook, FiVideo } from "react-icons/fi";
+import {  AiOutlineUser } from "react-icons/ai";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-    const navigate = useNavigate();
-
-    // Handle logout
-    const handleLogout = () => {
-        // Clear authentication token (if any)
-        localStorage.removeItem('token');
-        
-        // Redirect to home page
-        navigate("/");
-    };
-
     const menus = [
         { name: "Profile", link: "/Dashboard/Profile", icon: AiOutlineUser },
         { name: "Logout", link: "/", icon: RiLogoutCircleLine },
@@ -26,6 +15,7 @@ const Sidebar = () => {
         { name: "Priority DM", link: "/Dashboard/DM", icon: FiMessageSquare },
         { name: "Bookings", link: "/Dashboard/Booking", icon: FiBook},
         { name: "Calendar", link: "/Dashboard/Calendar", icon: FiCalendar },
+        { name: "Conference", link: "/Dashboard/Videocall", icon: FiVideo },
         // Keep the logout button below profile
     ];
     const [open, setOpen] = useState(false);
