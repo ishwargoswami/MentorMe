@@ -73,6 +73,20 @@
   gap: 0px;
 }
 
+.Dm-lower table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.Dm-lower th, .sm-lower td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.Dm-lower th {
+  background-color: #f2f2f2;
+}
 
 
   
