@@ -22,8 +22,6 @@ function Search({ details }) {
       return (
         person.name.toLowerCase().includes(searchField.toLowerCase()) ||
         person.domain.toLowerCase().includes(searchField.toLowerCase())
-
-     
       );
     }
   );

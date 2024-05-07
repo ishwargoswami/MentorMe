@@ -8,25 +8,22 @@ import { HashLink as Link } from 'react-router-hash-link';
 function Navbar() {
     const navigate = useNavigate();
 
-    // Function to check if user is logged in
+    
     const checkLoggedIn = () => {
-        // Implement your authentication logic here
-        // For example, you can check if user is authenticated based on a token
-        const token = localStorage.getItem('token'); // Assuming token is stored in localStorage
+      
+        const token = localStorage.getItem('token'); 
 
-        // Check if token exists and is valid
+        
         return token !== null;
     };
 
-    // Handle dashboard click
+    
     const handleDashboardClick = () => {
-        // Check if user is logged in
         const isLoggedIn = checkLoggedIn();
 
         if (isLoggedIn) {
             navigate("/Dashboard");
         } else {
-            // Show alert indicating user needs to login
             alert("Please login to access Dashboard");
         }
     };

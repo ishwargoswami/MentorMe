@@ -4,7 +4,7 @@ const initialDetails = [
     {
       id: 1,
       imgPath: "https://aeccc.targettechnology.in/static/media/PranayGupta.f3c530b7630ba8efb2ab.jpg",
-      name: "Amiras Lal",
+      name: "Amiras Kumar",
       domain: "Big Data",
       address:"New Delhi, India",
     },
@@ -18,21 +18,21 @@ const initialDetails = [
     {
       id: 3,
       imgPath: "https://avatars.githubusercontent.com/u/93366359?v=4",
-      name: "Bhargav Soni",
+      name: "Yash Soni",
       domain:"Web Development",
       address: "Baker Street, India",
     },
     {
       id: 4,
       imgPath: "https://aeccc.targettechnology.in/static/media/SaikatMukherjee.033310703edff52d0532.jpg",
-      name: "Varshil Soni",
+      name: "Krushna Parmar",
       domain:"Block Chain",
       address: "Baker Street, India",
     },
     {
       id: 5,
       imgPath: "https://aeccc.targettechnology.in/static/media/SoumyaBanerjee.2e2521d6029842435080.jpg",
-      name: "Het Desai",
+      name: "Vansh Mehta",
       domain:"Data Science",
       address: "London, India",
     },
