@@ -10,7 +10,7 @@ const Userprofile = require('./userprofile');
 dotenv.config({ path: './config.env' });
 require('./conn');
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: 'http://localhost:3000','https://mentorme-hooz.onrender.com',
   credentials: true, // This allows cookies to be sent from the frontend
 };
 app.use(cors(corsOptions));
