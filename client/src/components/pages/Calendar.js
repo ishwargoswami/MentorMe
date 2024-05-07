@@ -57,7 +57,7 @@ const Calendar = () => {
   const saveSettingsToDatabase = async () => {
     try {
       // Make a POST request to save settings to the database
-      const response = await axios.post('https://mentorme-hooz.onrender.com/save-settings', {
+      const response = await axios.post('http://localhost:5000/save-settings', {
         bp: bp,
         np: np,
         gm: gm,

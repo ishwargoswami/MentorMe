@@ -174,7 +174,6 @@ const Service = () => {
                           />
                           <input
                             type="date"
-                            required
                             name="date"
                             id="dateField"
                             value={formData.date}
