@@ -14,10 +14,6 @@ const Dm = () => {
         
             <div className="dm-upper">
                 <div className="dm-title"><h2>Priority DMs</h2></div>
-                {/* <div className="dm-list">
-                    <button id="dm-btns">Pending</button>
-                    <button id="dm-btns">Answered</button>
-                </div> */}
             </div>
             <div className="dm-lower">
             <table border="1px">

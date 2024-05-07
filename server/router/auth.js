@@ -46,53 +46,6 @@ router.post('/signin', async(req,res) => {
     }
 
  });
-// router.post('/register', async (req, res) => {
-
-//     const {email, username, password , conPassword} = req.body;
-    
-//     if(!email || !username || !password ||  !conPassword)
-//     {
-//         return res.json({ error: "please fill the fields"});
-    
-//     }
-//     try 
-//     {
-//       const userExist = await User.findOne({email:email});
-    
-//       if(userExist) 
-//             {
-//                 return res.json({ error: "email already exists"});
-//             }
-
-//             else 
-//             {
-//                 const user = new User({email, username, password});
-//                 const userRegister = await user.save()
-    
-    
-//                 if(userRegister)
-            
-//                 {
-//                     res.json({message : "User saved successfully"});
-//                 }
-            
-//                 else 
-//                 {
-//                     res.json({ error: "failed to register user"});
-//                 }
-                    
-//             }
-//             }
-//     catch(err)
-//     {
-//         console.log(err);
-//         res.json({ error: "Internal server error" })
-//     }
-//     });
-
-
-
-
 router.post('/register', async (req, res) => {
     const { email, username, password, conPassword } = req.body;
 
@@ -145,19 +98,16 @@ router.post('/edit', async (req, res) => {
         return res.status(500).json({ error: "Server error" });
     }
 });
-// to postman videoc 11.36 video 8
-
 router.get('/profile', async (req, res) => {
     try {
-        // Query MongoDB to fetch user profiles
-        const userProfile = await Userprofile.find(); // You can add query conditions if needed
-        
-        // Check if any user profiles were found
+      
+        const userProfile = await Userprofile.find(); 
+      
         if (userProfile.length === 0) {
             return res.status(404).json({ error: "No user profiles found" });
         }
         
-        // Send the user profiles as the response
+        
         res.status(200).json(userProfile);
     } catch (error) {
         console.error(error);

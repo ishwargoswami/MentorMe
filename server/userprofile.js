@@ -30,7 +30,7 @@ const userPROFILESchema = new mongoose.Schema({
         required: true
     },
     domain: {
-        type: String, // Fixed typo here
+        type: String, 
         
     },
     address: {

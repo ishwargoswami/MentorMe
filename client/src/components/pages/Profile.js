@@ -49,7 +49,7 @@ const Profile = () => {
           </div>
           <div className="img-cover"></div>
           <div className="profile-text">
-            <h1>Hello <span>{userprofile[0].firstname}</span> </h1>
+            <h1>Hello <span>{userprofile[0].firstName}</span> </h1>
             <p>
               This is your profile page. You can see the progress you've made
               with your work and manage your projects or assigned tasks !!!
@@ -74,7 +74,7 @@ const Profile = () => {
               </div>
             </div>
             <div className="container-pf-text-center">
-              <h2>{userprofile[0].firstname} {userprofile[0].lastName}</h2> 
+              <h2>{userprofile[0].firstName} {userprofile[0].lastName}</h2> 
               <hr id="line" />
             </div>
 

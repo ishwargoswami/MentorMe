@@ -184,7 +184,6 @@ const Edit = () => {
                         >
                           <option value="" disabled> Select Domain </option>
                           <option value="Web Development"> Web Development</option>
-                          <option value="Mobile Development"> </option>
                           <option value="Data Science">Data Science</option>
                           <option value="Machine Learning">Machine Learning</option>
                           <option value="Cybersecurity">Cybersecurity</option>
