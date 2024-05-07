@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { TbServicemark } from "react-icons/tb";
-import { FiMessageSquare, FiCalendar, FiBook, FiVideo } from "react-icons/fi";
+import { FiMessageSquare, FiCalendar,FiVideo } from "react-icons/fi";
 import {  AiOutlineUser } from "react-icons/ai";
 import "./Sidebar.css";
 
@@ -13,7 +13,6 @@ const Sidebar = () => {
         { name: "Logout", link: "/", icon: RiLogoutCircleLine },
         { name: "Service", link: "/Dashboard/Service", icon: TbServicemark, margin: true },
         { name: "Priority DM", link: "/Dashboard/DM", icon: FiMessageSquare },
-        { name: "Bookings", link: "/Dashboard/Booking", icon: FiBook},
         { name: "Calendar", link: "/Dashboard/Calendar", icon: FiCalendar },
         { name: "Conference", link: "/Dashboard/Videocall", icon: FiVideo },
         // Keep the logout button below profile

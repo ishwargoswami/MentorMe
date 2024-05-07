@@ -40,6 +40,15 @@ const Service = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Check if the selected service type is 'webinar'
+    if (name === 'domain' && value === 'webinar') {
+      // If 'webinar' is selected, show the date field
+      document.getElementById('dateField').style.display = 'block';
+    } else {
+      // If 'call' or 'PriorityDM' is selected, hide the date field
+      document.getElementById('dateField').style.display = 'none';
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -119,7 +128,7 @@ const Service = () => {
                 <tr key={index}>
                   <td>{service.domain}</td>
                   <td>{service.title}</td>
-                  <td>{service.date}</td>
+                  <td>{service.date ? service.date : "NA"}</td>
                   <td>{service.time}</td>
                   <td>{service.duration}</td>
                   <td>{service.amount}</td>
@@ -167,9 +176,11 @@ const Service = () => {
                             type="date"
                             required
                             name="date"
+                            id="dateField"
                             value={formData.date}
                             onChange={handleChange}
                             placeholder="Date"
+                            style={{ display: formData.domain === 'webinar' ? 'block' : 'none' }}
                           />
                           <input
                             type="time"

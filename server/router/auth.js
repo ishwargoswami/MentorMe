@@ -157,6 +157,14 @@ router.delete('/services/:id', async (req, res) => {
       res.status(500).json({ error: "Server error" });
     }
   });
+  
+router.post('/save-settings', async (req, res) => {
+  // Implement saving settings to the database here
+  res.status(200).send("Settings saved successfully");
+});
+
+module.exports = router;
+
 
 module.exports = router;
 

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "./Calendar.css";
 import Sidebar from "../Sidebar";
 import { LuCalendar } from "react-icons/lu";
-import { SiGooglemeet } from "react-icons/si";
+import { SiChainguard, SiChainlink } from "react-icons/si";
 import Switch from "react-switch";
 import { IoCloseSharp } from "react-icons/io5";
+import axios from 'axios';
+import "./Calendar.css";
 
 const Calendar = () => {
   const [bp, setBp] = useState("1 Week");
@@ -12,6 +13,8 @@ const Calendar = () => {
   const [gm, setGm] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [meetLink, setMeetLink] = useState(""); // State to manage Google Meet link
+  const [choice1, setChoiceOne] = useState('Request Reschedule');
+  const [choice2, setChoiceTwo] = useState('Any Time');
 
   const handleChangeBP = (event) => {
     setBp(event.target.value);
@@ -31,10 +34,9 @@ const Calendar = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    // Call function to save settings to database
+    saveSettingsToDatabase();
   };
-
-  const [choice1, setChoiceOne] = useState('Request Reschedule');
-  const [choice2, setChoiceTwo] = useState('Any Time');
 
   const handleClickOne = (e) => {
     if (e.target.tagName === 'LABEL') {
@@ -49,6 +51,27 @@ const Calendar = () => {
       setTimeout(() => {
         setChoiceTwo(e.target.textContent);
       }, 250);
+    }
+  };
+
+  const saveSettingsToDatabase = async () => {
+    try {
+      // Make a POST request to save settings to the database
+      const response = await axios.post('https://mentorme-hooz.onrender.com/save-settings', {
+        bp: bp,
+        np: np,
+        gm: gm,
+        meetLink: meetLink,
+        reschedulePolicy: choice1,
+        minimumNotice: choice2
+      });
+      if (response.status === 200) {
+        console.log('Settings saved successfully');
+      } else {
+        console.error('Failed to save settings');
+      }
+    } catch (error) {
+      console.error('Failed to save settings:', error);
     }
   };
 
@@ -106,9 +129,9 @@ const Calendar = () => {
           </div>
           <div className="cd-choose">
             <div className="cd-icons">
-              <SiGooglemeet />
+              <sichain />
             </div>
-            <div className="cd-gm">Google Meet</div>
+            <div className="cd-gm">🔗 Link</div>
             <div>
               <Switch
                 className="cd-toggle"
@@ -123,7 +146,7 @@ const Calendar = () => {
               <div className="google-meet-popup">
                 <input
                   type="text"
-                  placeholder="Enter Google Meet link"
+                  placeholder="Enter Link"
                   value={meetLink}
                   onChange={(e) => setMeetLink(e.target.value)}
                 />
