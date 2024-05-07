@@ -16,30 +16,30 @@ const Dm = () => {
                 <div className="dm-title"><h2>Priority DMs</h2></div>
             </div>
             <div className="dm-lower">
-            <table border="1px">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Subject</th>
-                <th>Stutus</th>
-              </tr>
-            </thead>
-            <tbody>
-                <tr>
-                  <td> Kalvin</td>
-                  <td> Doubt Regarding ..</td>
-                  <td>Pending</td>
-                  <td><button>Delete</button></td> 
-                </tr>
-                <tr>
-                  <td> Manish Yadav</td>
-                  <td>Q.1 what can..?</td>
-                  <td>Answerd</td>
-                  <td><button>Delete</button></td> 
-                </tr>
-         
-            </tbody>
-          </table>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>Kalvin</td>
+                      <td>Regarding today's session...</td>
+                      <td>Pending</td>
+                      <td><button>Delete</button></td> 
+                    </tr>
+                    <tr>
+                      <td>Manish Yadav</td>
+                      <td>What are the frequent...</td>
+                      <td>Answered</td>
+                      <td id="del_dm"><button>Delete</button></td> 
+                    </tr>
+                </tbody>
+              </table>
             </div>
 
       </div>

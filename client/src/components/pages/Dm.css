@@ -73,19 +73,19 @@
   gap: 0px;
 }
 
-.Dm-lower table {
-  width: 100%;
+.dm-lower table {
+  width: 1000px;
   border-collapse: collapse;
 }
 
-.Dm-lower th, .sm-lower td {
+.dm-lower th, .dm-lower td {
   border: 1px solid #dddddd;
   padding: 8px;
   text-align: left;
-  width: 100;
+  width: 100px;
 }
 
-.Dm-lower th {
+.dm-lower th {
   background-color: #f2f2f2;
 }
 
