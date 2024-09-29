@@ -14,12 +14,12 @@ function Navbar() {
         const token = localStorage.getItem('token'); 
 
         
-        return token !== null;
+        return true;
     };
 
     
     const handleDashboardClick = () => {
-        const isLoggedIn = checkLoggedIn();
+        const isLoggedIn = true;
 
         if (isLoggedIn) {
             navigate("/Dashboard");
